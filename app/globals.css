@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+ul[role="menu"] > [role="menuitem"] > a,
+ul[role="menu"] > [role="menuitem"] > button,
+ul[role="menu"] > [role="menuitem"] > label,
+ul[role="menu"] > [role="menuitem"][aria-haspopup="true"] {
+  all: unset;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 !important;
+  position: relative;
+  white-space: nowrap;
+  width: 100%;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none;
+}
+
+#isite::-webkit-scrollbar {
+  display: none;
+}
+.backy {
+  background: var(--window-background);
+}
+
