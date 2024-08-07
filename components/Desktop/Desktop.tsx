@@ -40,7 +40,9 @@ function Desktop() {
     }
 
     if (title === "My Resume") {
-      window.open("/Animesh_Chaudhri_Resume.pdf");
+      window.open(
+        "https://drive.google.com/file/d/1MYNa8cOnFyJrrlF1ia6M5wxrDqXkkqOG/view?usp=drive_link"
+      );
     }
     if (title === "Github") {
       window.open("https://github.com/animeshchaudhri");

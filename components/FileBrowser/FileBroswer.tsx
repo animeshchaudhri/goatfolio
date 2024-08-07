@@ -3,12 +3,12 @@ import React, { useCallback, useEffect, useRef, useState } from "react";
 import Draggable from "react-draggable";
 import Topbar from "../Browser/Topbar";
 import Filenavbar from "./Filenavbar";
+import Portfolio from "./Portfolio";
 
 function FileBroswer({
   setIsWindowOpen,
 
   title,
-  
 }: {
   setIsWindowOpen: (isOpen: boolean) => void;
 
@@ -51,6 +51,7 @@ function FileBroswer({
         >
           <Topbar title={title} onClose={handleClose} />
           <Filenavbar />
+          <Portfolio />
         </div>
       </Draggable>
     </>

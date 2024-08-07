@@ -111,7 +111,7 @@ function Taskbar({
                 onClick={toggleStartMenu}
               >
                 <Image
-                  className="absolute left-3 opacity-100"
+                  className="absolute left-0 opacity-100"
                   src="/icons/start.png"
                   alt="Start"
                   width={54}

@@ -48,7 +48,7 @@ const SpriteIcon = ({
     <div
       className={`inline-block w-5 h-5 bg-no-repeat ${className}`}
       style={{
-        backgroundImage: 'url("/icons/sprite.png")',
+        backgroundImage: 'url("/icons/Sprite.png")',
         backgroundPosition: getIconPosition(),
         width: geticondWidth(),
       }}
