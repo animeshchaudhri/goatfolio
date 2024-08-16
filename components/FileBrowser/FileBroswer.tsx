@@ -1,9 +1,10 @@
 "use client";
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import Draggable from "react-draggable";
-import Topbar from "../Browser/Topbar";
+
 import Filenavbar from "./Filenavbar";
 import Portfolio from "./Portfolio";
+import Topbar from "./Navigation";
 
 function FileBroswer({
   setIsWindowOpen,
@@ -43,16 +44,23 @@ function FileBroswer({
       <Draggable nodeRef={ref} bounds="parent">
         <div
           ref={ref}
-          className="absolute inline-block bg-white rounded-md shadow-lg "
+          className="absolute window active rounded-md shadow-lg bg-[#805ba5] "
           style={{
             ...responsiveStyles,
-            zIndex: 1,
           }}
         >
+          {/* <div className="window-body"> */}
+          {/* <Topbar title={title} onClose={handleClose} /> */}
           <Topbar title={title} onClose={handleClose} />
-          <Filenavbar />
-          <Portfolio />
+          {/* <Filenavbar />
+        
+           */}
+          <div className="window-body has-space">
+            <Filenavbar />
+            <Portfolio />
+          </div>
         </div>
+        {/* </div> */}
       </Draggable>
     </>
   );

@@ -54,7 +54,7 @@ function Taskbar({
     if (programName === "Remote Desktop Connection") {
       newApp = {
         title: "computer",
-        url: "http://localhost:3000",
+        url: "https://www.animesh.us",
         type: "browser",
       };
     } else if (programName === "Internet Explorer") {
