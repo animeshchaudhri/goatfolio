@@ -25,7 +25,7 @@ const DesktopIcon: React.FC<DesktopIconProps> = (props) => {
     const column = Math.floor(props.index / props.maxIconsPerColumn);
     const row = props.index % props.maxIconsPerColumn;
 
-    const x = column * (iconWidth + horizontalSpacing) + 5; // Add 20px left margin
+    const x = column * (iconWidth + horizontalSpacing) + 20; // Add 20px left margin
     const y = row * (iconHeight + verticalSpacing) + 20; // Add 20px top margin
 
     return { x, y };
@@ -59,9 +59,10 @@ const DesktopIcon: React.FC<DesktopIconProps> = (props) => {
         className={styles.icon}
         ref={ref}
       >
-        <div className="flex flex-col items-center">
+        <div >
           <div
             className={selected ? styles.iconimage_selected : styles.iconimage }
+          
           >
             <Image
               width={45}
@@ -71,13 +72,12 @@ const DesktopIcon: React.FC<DesktopIconProps> = (props) => {
               alt="icon"
             />
           </div>
-          <div
+        </div>
+        <div
           className={selected ? styles.iconlabel_selected : styles.iconlabel}
         >
           <p>{props.title}</p>
         </div>
-        </div>
-        
       </div>
     </Draggable>
   );

@@ -51,10 +51,10 @@ function Desktop() {
       window.open("https://www.linkedin.com/in/animeshchaudhri", "_blank");
     }
     if (title === "Recycle Bin") {
-      alert("Uca ?! 😂");
+      alert("idk man");
     }
 
-    console.log(`${title} was clicked`);
+    // console.log(`${title} was clicked`);
   };
 
   const handleClick = () => {
@@ -100,6 +100,7 @@ function Desktop() {
             doubleClick={() => iconClicked(icon.title)}
           />
         ))}
+       
 
         <Taskbar openApps={openApps} closeApp={closeApp} addApp={addApp} />
         {rightClickMenu && (
