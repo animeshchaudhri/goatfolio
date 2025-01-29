@@ -41,7 +41,7 @@ function Desktop() {
 
     if (title === "My Resume") {
       window.open(
-        "https://drive.google.com/file/d/1kVP3WEode8tagkWFFcQdlRaSv6wnKb0R/view?usp=sharing"
+        "https://drive.google.com/file/d/1Z7yJdrPmj39RI2LdGjjcK0NOk6kfOc-6/view?usp=sharing"
       );
     }
     if (title === "Github") {
