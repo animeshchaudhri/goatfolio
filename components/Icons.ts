@@ -21,7 +21,7 @@ export const desktopIcons = [
   },
   {
     title: "Twitter",
-    img: "/icons/Twitter.png",
+    img: "/icons/twitter.png",
   },
   {
     title: "Recycle Bin",
@@ -33,7 +33,7 @@ export const desktopIcons = [
   },
   {
     title: "My Projects",
-    img: "/icons/Doom.png",
+    img: "/icons/doom.png",
   },
 ];
 
