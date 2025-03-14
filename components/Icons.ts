@@ -29,7 +29,7 @@ export const desktopIcons = [
   },
   {
     title: "Doom",
-    img: "/icons/Doom.png",
+    img: "/icons/doom.png",
   },
   {
     title: "My Projects",

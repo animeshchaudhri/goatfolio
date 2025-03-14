@@ -8,7 +8,28 @@ import Alertbox from "../Alert/Alertbox";
 import ServerClock from "../Clock/ServerClock";
 import ShutdownVideo from "../Videoplayer/ShutdownVideo";
 import StartMenu from "./StartMenu";
-import Browser from "../Browser/Browser";
+
+
+const getIconPath = (appTitle: string): string => {
+
+  const iconMappings: Record<string, string> = {
+    "My Projects": "update",
+    "Internet": "internet",
+    "computer": "computer",
+    "notepad": "notepad",
+    "update": "update",
+    "Horror": "horror",
+    "Doom": "doom",
+
+  };
+  
+
+  if (appTitle in iconMappings) {
+    return `/icons/${iconMappings[appTitle]}.png`;
+  }
+
+  return `/icons/${appTitle.toLowerCase()}.png`;
+};
 
 function Taskbar({
   openApps,
@@ -122,16 +143,23 @@ function Taskbar({
                 {openApps.map((app, index) => (
                   <div
                     key={index}
-                    className=" cursor-pointer flex items-center justify-center gap-2 backy p-2 pr-4 "
+                    className={`cursor-pointer flex items-center justify-center gap-2 px-3 py-1.5 rounded-t-sm
+                      ${openApps.some(a => a.title === app.title) 
+                        ? 'bg-gradient-to-b from-[#FEFEFF] to-[#E3F0FE] border-[1px] border-b-0 border-[#7DA2CE] shadow-[inset_0_1px_0_0_#ffffff]' 
+                        : 'hover:bg-[rgba(255,255,255,0.3)]'}`}
                     onClick={() => closeApp(app.title)}
                   >
                     <Image
-                      src={`/icons/${app.title.toLowerCase()}.png`}
+                      src={getIconPath(app.title)}
                       alt={app.title}
                       width={24}
                       height={24}
+                      onError={(e) => {
+                        // Fallback to a default icon if the specific one doesn't exist
+                        (e.target as HTMLImageElement).src = "/icons/default.png";
+                      }}
                     />
-                    <p>{app.title}</p>
+                    <p className="text-xs text-[#0C3B80] font-medium">{app.title}</p>
                   </div>
                 ))}
               </div>

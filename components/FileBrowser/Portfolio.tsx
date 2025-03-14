@@ -28,7 +28,7 @@ const projects: Project[] = [
     description: "Reverse-engineered the classic Purble Place game and recreated it using React.js and PixiJS for a modern web experience. Utilized Resource Hacker to extract sprite sheets and Texture Packer Pro for enhanced visuals.",
     images: ["/images/purble-place.jpg"],
     techStack: ["React.js", "PixiJS", "JavaScript", "Game Development"],
-    githubUrl: "https://github.com/animeshchaudhri/purble-place"
+    githubUrl: "https://github.com/animeshchaudhri/purble"
   },
   {
     id: "dsa-atlas",
@@ -36,8 +36,8 @@ const projects: Project[] = [
     description: "Comprehensive Data Structures and Algorithms practice platform targeting company-specific interview preparation. Features include user authentication, problem tracking, and an interactive UI to enhance user engagement.",
     images: ["/images/dsa-atlas.jpg"],
     techStack: ["Next.js", "Express.js", "Node.js", "MongoDB", "Clerk.js", "Framer Motion"],
-    githubUrl: "https://github.com/animeshchaudhri/dsa-atlas",
-    liveUrl: "https://dsa-atlas.vercel.app"
+    githubUrl: "https://github.com/animeshchaudhri/dsaatlas",
+    liveUrl: "https://dsaatlas.vercel.app/"
   },
   {
     id: "http-server",
@@ -148,7 +148,7 @@ function Portfolio() {
               </div>
             </div>
             
-            {/* Windows 7 file properties section */}
+          
             <div className="bg-[#F7FBFF] border-[1px] border-[#D9E3F1] p-3 rounded">
               <h2 className="text-[#0C3B80] text-sm font-bold mb-1">File Properties</h2>
               <div className="text-xs text-[#333333]">
