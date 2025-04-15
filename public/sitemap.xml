@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://animesh.us/</loc>
+    <lastmod>2025-04-15</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://animesh.us/images/wallpaper2.jpg</image:loc>
+      <image:title>Animesh Chaudhri Portfolio</image:title>
+      <image:caption>Animesh Chaudhri's Windows 7-inspired interactive portfolio</image:caption>
+    </image:image>
+  </url>
+</urlset>
