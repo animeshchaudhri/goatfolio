@@ -38,10 +38,17 @@ function Browser({
     width: isSmallScreen ? "90%" : "750px",
     height: isSmallScreen ? "90%" : "75%",
     transform: isSmallScreen ? "none" : "translate(145px, -14px)",
-  };
-
-  return (
-    <Draggable nodeRef={ref} bounds="parent">
+  };  return (
+    <Draggable 
+      nodeRef={ref} 
+      bounds="parent"
+      defaultClassName=""
+      defaultClassNameDragging=""
+      defaultClassNameDragged=""
+      cancel=".window-content"
+      scale={1}
+      positionOffset={{ x: 0, y: 0 }}
+    >
       <div
         ref={ref}
         className="absolute inline-block window active bg-white rounded-md shadow-lg"

@@ -40,8 +40,16 @@ function FileBroswer({
     transform: isSmallScreen ? "none" : "translate(145px, -14px)",
   };
   return (
-    <>
-      <Draggable nodeRef={ref} bounds="parent">
+    <>      <Draggable 
+        nodeRef={ref} 
+        bounds="parent"
+        defaultClassName=""
+        defaultClassNameDragging=""
+        defaultClassNameDragged=""
+        cancel=".window-body"
+        scale={1}
+        positionOffset={{ x: 0, y: 0 }}
+      >
         <div
           ref={ref}
           className="absolute window active rounded-md shadow-lg bg-[#805ba5] "
