@@ -14,6 +14,7 @@ interface DesktopIconProps {
 
 const DesktopIcon: React.FC<DesktopIconProps> = (props) => {
   const [selected, setSelected] = useState(false);
+  const [lastTap, setLastTap] = useState(0);
   const ref = useRef<HTMLDivElement>(null);
 
   const iconWidth = 80;
@@ -32,12 +33,25 @@ const DesktopIcon: React.FC<DesktopIconProps> = (props) => {
   };
 
   const { x, y } = calculatePosition();
-
   const HighlightIcon = () => {
     setSelected(!selected);
   };
 
-  const handleClickOutside = (event: MouseEvent) => {
+  const handleTap = (event: React.TouchEvent | React.MouseEvent) => {
+    event.preventDefault();
+    const currentTime = new Date().getTime();
+    const tapLength = currentTime - lastTap;
+    
+    if (tapLength < 300 && tapLength > 0) {
+      props.doubleClick();
+      setLastTap(0);
+    } else {
+      setLastTap(currentTime);
+      HighlightIcon();
+    }
+  };
+
+  const handleClickOutside = (event: MouseEvent | TouchEvent) => {
     if (ref.current && !ref.current.contains(event.target as Node)) {
       setSelected(false);
     }
@@ -45,18 +59,26 @@ const DesktopIcon: React.FC<DesktopIconProps> = (props) => {
 
   useEffect(() => {
     document.addEventListener("mousedown", handleClickOutside);
+    document.addEventListener("touchstart", handleClickOutside);
     return () => {
       document.removeEventListener("mousedown", handleClickOutside);
+      document.removeEventListener("touchstart", handleClickOutside);
     };
   }, []);
-
   return (
-    <Draggable nodeRef={ref} bounds="parent">
+    <Draggable 
+      nodeRef={ref} 
+      bounds="parent"
+      defaultClassName=""
+      defaultClassNameDragging=""
+      defaultClassNameDragged=""
+    >
       <div
         style={{ top: y, left: x }}
         onDoubleClick={props.doubleClick}
-        onClick={HighlightIcon}
-        className={styles.icon}
+        onClick={handleTap}
+        onTouchStart={handleTap}
+        className={`${styles.icon} touch-manipulation`}
         ref={ref}
       >
         <div className="flex flex-col items-center">
