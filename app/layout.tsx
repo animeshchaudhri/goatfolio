@@ -4,7 +4,6 @@ import "./globals.css";
 import { Analytics } from '@vercel/analytics/react';
 import SEOBoost from "@/components/SEO/SEOBoost";
 
-
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -89,7 +88,14 @@ export default function RootLayout({
             })
           }}
         />
-      </head>      <body className={inter.className}>
+        {/* Add your tracking script here */}
+        <script
+          defer
+          src="https://www.animeshchaudhri.me/script.js"
+          data-website-id="2aaddaf6-6950-4605-a634-445d006ed5f6"
+        ></script>
+      </head>
+      <body className={inter.className}>
         <SEOBoost />
         {children}
         <Analytics />
