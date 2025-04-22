@@ -42,12 +42,22 @@ const DesktopIcon: React.FC<DesktopIconProps> = (props) => {
     const currentTime = new Date().getTime();
     const tapLength = currentTime - lastTap;
     
-    if (tapLength < 300 && tapLength > 0) {
-      props.doubleClick();
-      setLastTap(0);
+    if (event.type === 'touchstart') {
+      // Handle mobile touch events
+      if (tapLength < 300 && tapLength > 0) {
+        props.doubleClick();
+        setLastTap(0);
+      } else {
+        setLastTap(currentTime);
+        HighlightIcon();
+      }
     } else {
-      setLastTap(currentTime);
-      HighlightIcon();
+      // Handle desktop click events
+      if (event.type === 'dblclick') {
+        props.doubleClick();
+      } else {
+        HighlightIcon();
+      }
     }
   };
 
@@ -75,8 +85,15 @@ const DesktopIcon: React.FC<DesktopIconProps> = (props) => {
     >
       <div
         style={{ top: y, left: x }}
-        onDoubleClick={props.doubleClick}
-        onClick={handleTap}
+        onDoubleClick={(e) => {
+          e.preventDefault();
+          props.doubleClick();
+        }}
+        onClick={(e) => {
+          if (e.detail === 1) { // Only handle single clicks
+            handleTap(e);
+          }
+        }}
         onTouchStart={handleTap}
         className={`${styles.icon} touch-manipulation`}
         ref={ref}
