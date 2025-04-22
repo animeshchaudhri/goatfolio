@@ -29,7 +29,7 @@ function Desktop() {
     const urls: { [key: string]: string } = {
       Internet: "https://www.google.com/?igu=1",
       Twitter: "https://animeshport.netlify.app/",
-      Doom: "https://danihre.github.io/jsdoom/",
+      Doom: "https://animeshchaudhri.github.io/jsdoom/",
     };
 
     if (title in urls) {
