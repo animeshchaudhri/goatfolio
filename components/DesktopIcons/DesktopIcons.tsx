@@ -77,7 +77,7 @@ const DesktopIcon: React.FC<DesktopIconProps> = (props) => {
   }, []);
   return (
     <Draggable 
-      nodeRef={ref} 
+      nodeRef={ref as React.RefObject<HTMLElement>}
       bounds="parent"
       defaultClassName=""
       defaultClassNameDragging=""

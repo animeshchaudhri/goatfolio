@@ -1,5 +1,5 @@
 import { StaticImageData } from "next/image";
-import { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import Draggable from "react-draggable";
 import styles from "./Helper.module.css";
 import Image from "next/image";
@@ -51,7 +51,7 @@ const DesktopIcon: React.FC<DesktopIconProps> = (props) => {
   }, []);
 
   return (
-    <Draggable nodeRef={ref} bounds="parent">
+    <Draggable nodeRef={ref as React.RefObject<HTMLElement>} bounds="parent">
       <div
         style={{ top: y, left: x }}
         onDoubleClick={props.doubleClick}

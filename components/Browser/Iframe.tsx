@@ -3,36 +3,27 @@ import React, { useEffect, useState } from "react";
 
 function Iframe({ url }: { url: string }) {
   return (
-    <>
-      <LazyComponent show={true}>
-        <iframe
-          src={url}
-          id="isite"
-          className="w-full h-full border-0 overflow-hidden "
-          title="site"
-          style={{
-            overflow: "hidden",
-            scrollbarWidth: "none",
-            msOverflowStyle: "none",
-          }}
-          loading="lazy"
-        ></iframe>
-      </LazyComponent>
-    </>
+    <LazyIframe>
+      <iframe
+        src={url}
+        id="isite"
+        className="w-full h-full border-0 overflow-hidden"
+        title="site"
+        style={{ overflow: "hidden", scrollbarWidth: "none", msOverflowStyle: "none" }}
+        loading="lazy"
+      />
+    </LazyIframe>
   );
 }
 
 export default Iframe;
 
-const LazyComponent: React.FC<{ show: boolean; children: unknown }> = ({
-  show,
-  children,
-}) => {
-  const [loaded, setLoad] = useState(false);
+function LazyIframe({ children }: { children: React.ReactNode }) {
+  const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
-    if (show && !loaded) setLoad(true);
-  }, [show, loaded]);
+    setLoaded(true);
+  }, []);
 
-  return show || loaded ? <>{children}</> : null;
-};
+  return loaded ? <>{children}</> : null;
+}

@@ -1,77 +1,45 @@
 "use client";
-import React, { useCallback, useEffect, useRef, useState } from "react";
-import Draggable from "react-draggable";
-
+import React, { useCallback } from "react";
 import Filenavbar from "./Filenavbar";
 import Portfolio from "./Portfolio";
 import Topbar from "./Navigation";
+import DraggableWindow from "../DraggableWindow/DraggableWindow";
 
-function FileBroswer({
+function FileBrowser({
   setIsWindowOpen,
-
   title,
+  zIndex,
+  onFocus,
+  minimized,
+  onMinimize,
 }: {
   setIsWindowOpen: (isOpen: boolean) => void;
-
   title: string;
+  zIndex?: number;
+  onFocus?: () => void;
+  minimized?: boolean;
+  onMinimize?: () => void;
 }) {
-  const ref = useRef<HTMLDivElement>(null);
-  const [isSmallScreen, setIsSmallScreen] = useState(false);
+  const handleClose = useCallback(() => setIsWindowOpen(false), [setIsWindowOpen]);
 
-  useEffect(() => {
-    const handleResize = () => {
-      setIsSmallScreen(window.innerWidth < 768);
-    };
-
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  const handleClose = useCallback(() => {
-    setIsWindowOpen(false);
-  }, [setIsWindowOpen]);
-
-  const responsiveStyles = {
-    top: isSmallScreen ? "5%" : "10%",
-    left: isSmallScreen ? "5%" : "20%",
-    width: isSmallScreen ? "90%" : "750px",
-    height: isSmallScreen ? "90%" : "75%",
-    transform: isSmallScreen ? "none" : "translate(145px, -14px)",
-  };
   return (
-    <>      <Draggable 
-        nodeRef={ref} 
-        bounds="parent"
-        defaultClassName=""
-        defaultClassNameDragging=""
-        defaultClassNameDragged=""
-        cancel=".window-body"
-        scale={1}
-        positionOffset={{ x: 0, y: 0 }}
-      >
-        <div
-          ref={ref}
-          className="absolute window active rounded-md shadow-lg bg-[#805ba5] "
-          style={{
-            ...responsiveStyles,
-          }}
-        >
-          {/* <div className="window-body"> */}
-          {/* <Topbar title={title} onClose={handleClose} /> */}
-          <Topbar title={title} onClose={handleClose} />
-          {/* <Filenavbar />
-        
-           */}
-          <div className="window-body has-space">
-            <Filenavbar />
-            <Portfolio />
-          </div>
-        </div>
-        {/* </div> */}
-      </Draggable>
-    </>
+    <DraggableWindow
+      cancelSelector=".window-body"
+      zIndex={zIndex}
+      maxWidth="820px"
+      maxHeight="80vh"
+      onFocus={onFocus}
+      minimized={minimized}
+      onMinimize={onMinimize}
+      className="window active rounded-md shadow-lg bg-[#805ba5]"
+    >
+      <Topbar title={title} onClose={handleClose} />
+      <div className="window-body has-space" style={{ overflowY: "auto" }}>
+        <Filenavbar />
+        <Portfolio />
+      </div>
+    </DraggableWindow>
   );
 }
 
-export default FileBroswer;
+export default FileBrowser;

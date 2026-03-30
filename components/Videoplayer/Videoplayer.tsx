@@ -1,68 +1,42 @@
 "use client";
-import React, { useCallback, useEffect, useRef, useState } from "react";
-import Draggable from "react-draggable";
+import React, { useCallback } from "react";
 import Topbar from "../Browser/Topbar";
-
 import Vid from "./Video";
+import DraggableWindow from "../DraggableWindow/DraggableWindow";
 
 function Videoplayer({
   setIsWindowOpen,
   url,
   title,
   zIndex,
+  onFocus,
+  minimized,
+  onMinimize,
 }: {
   setIsWindowOpen: (isOpen: boolean) => void;
   url: string;
   title: string;
   zIndex: number;
+  onFocus?: () => void;
+  minimized?: boolean;
+  onMinimize?: () => void;
 }) {
-  const handleClose = useCallback(() => {
-    setIsWindowOpen(false);
-  }, [setIsWindowOpen]);
+  const handleClose = useCallback(() => setIsWindowOpen(false), [setIsWindowOpen]);
 
-  const ref = useRef<HTMLDivElement>(null);
-  const [isSmallScreen, setIsSmallScreen] = useState(false);
-
-  useEffect(() => {
-    const handleResize = () => {
-      setIsSmallScreen(window.innerWidth < 768);
-    };
-
-    handleResize();
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  const responsiveStyles = {
-    top: isSmallScreen ? "5%" : `${10 + zIndex * 2}%`,
-    left: isSmallScreen ? "5%" : `${20 + zIndex * 2}%`,
-    width: isSmallScreen ? "60%" : "750px",
-    height: isSmallScreen ? "50%" : "75%",
-    transform: isSmallScreen ? "none" : "translate(145px, -14px)",
-  };  return (
-    <>      <Draggable 
-        nodeRef={ref} 
-        bounds="parent"
-        defaultClassName=""
-        defaultClassNameDragging=""
-        defaultClassNameDragged=""
-        cancel=".video-content"
-        scale={1}
-        positionOffset={{ x: 0, y: 0 }}
-      >
-        <div
-          ref={ref}
-          className="absolute  window active bg-white rounded-md shadow-lg"
-          style={{
-            ...responsiveStyles,
-            zIndex: 1000 + zIndex,
-          }}
-        >
-          <Topbar title={title} onClose={handleClose} />
-          <Vid url={url} />
-        </div>
-      </Draggable>
-    </>
+  return (
+    <DraggableWindow
+      cancelSelector=".video-content"
+      zIndex={zIndex}
+      width="600px"
+      height="400px"
+      onFocus={onFocus}
+      minimized={minimized}
+      onMinimize={onMinimize}
+      className="window active bg-white rounded-md shadow-lg"
+    >
+      <Topbar title={title} onClose={handleClose} />
+      <Vid url={url} />
+    </DraggableWindow>
   );
 }
 

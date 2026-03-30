@@ -35,6 +35,10 @@ export const desktopIcons = [
     title: "My Projects",
     img: "/icons/doom.png",
   },
+  {
+    title: "My Blog",
+    img: "/icons/notepad.png",
+  },
 ];
 
 export const programs = [

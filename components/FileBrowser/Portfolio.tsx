@@ -63,12 +63,12 @@ function Portfolio() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(projects[0]);
 
   return (
-    <div className="w-full h-full flex flex-col border-[1px] border-[#7E9BC5] shadow-md overflow-hidden">
+    <div className="w-full flex flex-col border-[1px] border-[#7E9BC5] shadow-md" style={{ minHeight: "400px", minWidth: "600px" }}>
    
       
      
 
-      <div className="flex flex-1 overflow-hidden">
+      <div className="flex overflow-hidden" style={{ height: "360px" }}>
         {/* Windows 7 sidebar with projects list */}
         <div className="w-1/4 bg-[#F0F6FC] border-r-[1px] border-[#B9CCE5] overflow-y-auto">
           <div className="px-2 py-3 border-b-[1px] border-[#D9E3F1]">

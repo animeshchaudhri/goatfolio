@@ -21,8 +21,10 @@ ul[role="menu"] > [role="menuitem"][aria-haspopup="true"] {
   display: none;
 }
 
+html,
 body {
-  -ms-overflow-style: none; /* IE and Edge */
+  height: 100%;
+  -ms-overflow-style: none;
   scrollbar-width: none;
 }
 
