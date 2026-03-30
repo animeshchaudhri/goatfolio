@@ -108,6 +108,7 @@ const DesktopIcon: React.FC<DesktopIconProps> = (props) => {
               style={{ maxWidth: "100%" }}
               src={props.img}
               alt="icon"
+              loading="eager"
             />
           </div>
           <div
