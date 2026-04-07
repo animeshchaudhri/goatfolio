@@ -92,7 +92,7 @@ export default function RootLayout({
         {/* Add your tracking script here */}
         <script
           defer
-          src="https://analytics.animesh.us/script.jss"
+          src="https://analytics.animesh.us/script.js"
           data-website-id="2aaddaf6-6950-4605-a634-445d006ed5f6"
         ></script>
       </head>
