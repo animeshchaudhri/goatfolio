@@ -80,13 +80,34 @@ function DraggableWindow({
   if (isSmallScreen) {
     return (
       <WindowContext.Provider value={{ onMinimize: handleMinimize, onMaximize: handleMaximize }}>
-        <div
-          className={`absolute ${className}`}
-          style={{ top: "2%", left: "5%", width: "50vh", height: "50vh", zIndex: zIndexBase + zIndex, display: "flex", flexDirection: "column", overflow: "hidden" }}
-          onMouseDown={onFocus}
+        <Draggable
+          nodeRef={ref as React.RefObject<HTMLElement>}
+          bounds="parent"
+          defaultClassName=""
+          defaultClassNameDragging=""
+          defaultClassNameDragged=""
+          cancel={cancelSelector}
+          defaultPosition={{ x: 0, y: 0 }}
         >
-          {children}
-        </div>
+          <div
+            ref={ref}
+            className={`absolute ${className}`}
+            style={{
+              top: 0,
+              left: 0,
+              width: "100vw",
+              height: `calc(100vh - 44px)`,
+              zIndex: zIndexBase + zIndex,
+              display: minimized ? "none" : "flex",
+              flexDirection: "column",
+              overflow: "hidden",
+            }}
+            onMouseDown={onFocus}
+            onTouchStart={onFocus as unknown as React.TouchEventHandler}
+          >
+            {children}
+          </div>
+        </Draggable>
       </WindowContext.Provider>
     );
   }

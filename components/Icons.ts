@@ -39,6 +39,10 @@ export const desktopIcons = [
     title: "My Blog",
     img: "/icons/notepad.png",
   },
+  {
+    title: "Courage",
+    img: "/icons/courage.png",
+  },
 ];
 
 export const programs = [
@@ -47,7 +51,7 @@ export const programs = [
   { name: "Internet Explorer", icon: "icons/internet.png" },
   { name: "Sound Settings", icon: "icons/sound.png" },
   { name: "Remote Desktop Connection", icon: "icons/computer.png" },
-  { name: "Pet", icon: "icons/pet.png" },
+  { name: "Pet", icon: "icons/courage.png" },
   { name: "Chat", icon: "icons/chat.png" },
   { name: "Horror", icon: "icons/horror.png" },
 ];

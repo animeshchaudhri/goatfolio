@@ -1,16 +1,24 @@
 import { getAllPosts } from "@/lib/blog";
 import { VisitorCounter } from "@/components/Blog/VisitorCounter";
+import BlogDancers from "@/components/Dancer/BlogDancers";
 
 export const metadata = {
   title: "animesh's blog",
   description: "my corner of the internet",
 };
 
-export default function BlogIndex() {
+export default async function BlogIndex({
+  searchParams,
+}: {
+  searchParams: Promise<{ embed?: string }>;
+}) {
+  const { embed } = await searchParams;
+  const qs = embed ? "?embed=1" : "";
   const posts = getAllPosts();
 
   return (
     <>
+      <BlogDancers />
       <style>{STYLES}</style>
       <div className="page-wrap">
 
@@ -28,7 +36,7 @@ export default function BlogIndex() {
 
         {/* Nav */}
         <div className="old-nav">
-          <a href="/blog">[ blog ]</a>
+          <a href={`/blog${qs}`}>[ blog ]</a>
           <span className="nav-sep">|</span>
           <a href="https://github.com/animeshchaudhri" target="_blank" rel="noreferrer">[ github ]</a>
           <span className="nav-sep">|</span>
@@ -50,7 +58,7 @@ export default function BlogIndex() {
                   <tr key={post.slug} className="post-row">
                     <td className="td-icon">::</td>
                     <td className="td-title">
-                      <a href={`/blog/${post.slug}`} className="post-link">{post.title}</a>
+                      <a href={`/blog/${post.slug}${qs}`} className="post-link">{post.title}</a>
                       <br />
                       <span className="post-desc">{post.description}</span>
                     </td>

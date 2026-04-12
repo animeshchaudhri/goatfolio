@@ -9,28 +9,37 @@ import FileBrowser from "../FileBrowser/FileBroswer";
 import { desktopIcons } from "../Icons";
 import Notepad from "../Notepad/Notepad";
 import Videoplayer from "../Videoplayer/Videoplayer";
+import GreenScreenDancer from "../Dancer/GreenScreenDancer";
+import MyComputer from "../MyComputer/MyComputer";
 
 export type App = { title: string; url: string; type: string; icon?: string };
 
-const ICON_ACTIONS: Record<string, () => void> = {
+const ICON_ACTIONS: Record<string, (setDancer?: (v: boolean) => void) => void> = {
   "My Resume": () => window.open("https://drive.google.com/file/d/1Z7yJdrPmj39RI2LdGjjcK0NOk6kfOc-6/view?usp=sharing"),
   Github: () => window.open("https://github.com/animeshchaudhri"),
   LinkedIn: () => window.open("https://www.linkedin.com/in/animeshchaudhri", "_blank"),
   "Recycle Bin": () => alert("There's nothing to delete!"),
+  Courage: (_setDancer) => _setDancer?.(true),
 };
 
 const ICON_APPS: Record<string, App> = {
+  Computer:     { title: "Computer",     url: "",                                            type: "myComputer",   icon: "computer" },
   Internet:     { title: "Internet",     url: "https://www.google.com/?igu=1",              type: "browser",      icon: "internet" },
   Twitter:      { title: "Twitter",      url: "https://animeshport.netlify.app/",            type: "browser",      icon: "twitter" },
   Doom:         { title: "Doom",         url: "https://animeshchaudhri.github.io/jsdoom/",  type: "browser",      icon: "doom" },
   "My Projects":{ title: "My Projects", url: "",                                             type: "fileBrowser",  icon: "update" },
-  "My Blog":    { title: "My Blog",      url: "/blog",                                       type: "browser",      icon: "notepad" },
+  "My Blog":    { title: "My Blog",      url: "/blog?embed=1",                               type: "browser",      icon: "notepad" },
 };
 
-function Desktop() {
+function Desktop({ initialBlog }: { initialBlog?: string } = {}) {
   const [rightClickPos, setRightClickPos] = useState<{ x: number; y: number } | null>(null);
-  const [openApps, setOpenApps] = useState<App[]>([]);
+  const [openApps, setOpenApps] = useState<App[]>(() =>
+    initialBlog
+      ? [{ title: "My Blog", url: `/blog/${initialBlog}?embed=1`, type: "browser", icon: "notepad" }]
+      : []
+  );
   const [minimizedApps, setMinimizedApps] = useState<Set<string>>(new Set());
+  const [showDancer, setShowDancer] = useState(false);
 
   const closeApp = (title: string) => {
     setOpenApps((prev) => prev.filter((app) => app.title !== title));
@@ -66,7 +75,7 @@ function Desktop() {
 
   const iconClicked = (title: string) => {
     if (ICON_ACTIONS[title]) {
-      ICON_ACTIONS[title]();
+      ICON_ACTIONS[title](setShowDancer);
     } else if (ICON_APPS[title]) {
       addApp(ICON_APPS[title]);
     }
@@ -97,6 +106,8 @@ function Desktop() {
         </div>
       )}
 
+      {showDancer && <GreenScreenDancer onClose={() => setShowDancer(false)} />}
+
       {openApps.map((app, index) =>
         app.type === "browser" ? (
           <Browser key={app.title} setIsWindowOpen={() => closeApp(app.title)} url={app.url} title={app.title} zIndex={index} onFocus={() => focusApp(app.title)} minimized={minimizedApps.has(app.title)} onMinimize={() => minimizeApp(app.title)} />
@@ -106,6 +117,8 @@ function Desktop() {
           <Notepad key={app.title} handleClose={() => closeApp(app.title)} zIndex={index} onFocus={() => focusApp(app.title)} minimized={minimizedApps.has(app.title)} onMinimize={() => minimizeApp(app.title)} />
         ) : app.type === "Videoplayer" ? (
           <Videoplayer key={app.title} setIsWindowOpen={() => closeApp(app.title)} url={app.url} title={app.title} zIndex={index} onFocus={() => focusApp(app.title)} minimized={minimizedApps.has(app.title)} onMinimize={() => minimizeApp(app.title)} />
+        ) : app.type === "myComputer" ? (
+          <MyComputer key={app.title} setIsWindowOpen={() => closeApp(app.title)} zIndex={index} onFocus={() => focusApp(app.title)} minimized={minimizedApps.has(app.title)} onMinimize={() => minimizeApp(app.title)} />
         ) : null
       )}
     </div>

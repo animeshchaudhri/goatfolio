@@ -1,6 +1,8 @@
 import { notFound } from "next/navigation";
 import { getPost, getAllPosts } from "@/lib/blog";
 import { VisitorCounter } from "@/components/Blog/VisitorCounter";
+import Desktop from "@/components/Desktop/Desktop";
+import BlogDancers from "@/components/Dancer/BlogDancers";
 
 export async function generateStaticParams() {
   return getAllPosts().map((p) => ({ slug: p.slug }));
@@ -13,15 +15,29 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return { title: `${post.title} :: animesh's blog`, description: post.description };
 }
 
-export default async function BlogPost({ params }: { params: Promise<{ slug: string }> }) {
+export default async function BlogPost({
+  params,
+  searchParams,
+}: {
+  params: Promise<{ slug: string }>;
+  searchParams: Promise<{ embed?: string }>;
+}) {
   const { slug } = await params;
+  const { embed } = await searchParams;
   const post = getPost(slug);
   if (!post) notFound();
 
+  // Direct URL visit → show desktop with blog pre-opened in a window
+  if (!embed) {
+    return <Desktop initialBlog={slug} />;
+  }
+
+  const qs = embed ? "?embed=1" : "";
   const html = renderMarkdown(post.content);
 
   return (
     <>
+      <BlogDancers />
       <style>{STYLES}</style>
       <div className="page-wrap">
 
@@ -33,7 +49,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
 
         {/* Nav */}
         <div className="old-nav">
-          <a href="/blog">[ back to blog ]</a>
+          <a href={`/blog${qs}`}>[ back to blog ]</a>
           <span className="nav-sep">|</span>
           <a href="https://github.com/animeshchaudhri" target="_blank" rel="noreferrer">[ github ]</a>
           <span className="nav-sep">|</span>
@@ -63,7 +79,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
 
             {/* Footer nav */}
             <div className="post-footer">
-              <span><a href="/blog">back to all posts</a></span>
+              <span><a href={`/blog${qs}`}>back to all posts</a></span>
               <span className="footer-sep">·</span>
               <span><a href="mailto:hi@animesh.us">send me an email</a></span>
             </div>
@@ -82,7 +98,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
                 <li><a href="https://github.com/animeshchaudhri" target="_blank" rel="noreferrer">github</a></li>
                 <li><a href="https://www.linkedin.com/in/animeshchaudhri" target="_blank" rel="noreferrer">linkedin</a></li>
                 <li><a href="mailto:hi@animesh.us">email</a></li>
-                <li><a href="/blog">all posts</a></li>
+                <li><a href={`/blog${qs}`}>all posts</a></li>
               </ul>
             </div>
             {/* <div className="sidebar-box">
