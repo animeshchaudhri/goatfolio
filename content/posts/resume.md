@@ -1,3 +1,9 @@
+---
+title: "Resume is here for some reason"
+date: "2026-04-22"
+description: "Dropped my resume here cause why not"
+---
+
 # Animesh Chaudhri
 
 [LinkedIn](https://www.linkedin.com/in/animeshchaudhri/) • [GitHub](https://github.com/animeshchaudhri) • animesh.dev10@gmail.com  • Pune, India
