@@ -15,7 +15,7 @@ import MyComputer from "../MyComputer/MyComputer";
 export type App = { title: string; url: string; type: string; icon?: string };
 
 const ICON_ACTIONS: Record<string, (setDancer?: (v: boolean) => void) => void> = {
-  "My Resume": () => window.open("https://drive.google.com/file/d/1Z7yJdrPmj39RI2LdGjjcK0NOk6kfOc-6/view?usp=sharing"),
+  "My Resume": () => window.open("https://www.animesh.us/blog/resume"),
   Github: () => window.open("https://github.com/animeshchaudhri"),
   LinkedIn: () => window.open("https://www.linkedin.com/in/animeshchaudhri", "_blank"),
   "Recycle Bin": () => alert("There's nothing to delete!"),
