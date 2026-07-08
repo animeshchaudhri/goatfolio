@@ -95,6 +95,11 @@ export default function RootLayout({
           src="https://analytics.animesh.us/script.js"
           data-website-id="2aaddaf6-6950-4605-a634-445d006ed5f6"
         ></script>
+        <script
+          defer
+          src="https://analytics.animesh.us/recorder.js"
+          data-website-id="b1397736-939c-4843-bf24-384fb2289df3"
+        ></script>
       </head>
       <body className={inter.className}>
         <SEOBoost />
