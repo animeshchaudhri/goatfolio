@@ -15,7 +15,6 @@ import MyComputer from "../MyComputer/MyComputer";
 export type App = { title: string; url: string; type: string; icon?: string };
 
 const ICON_ACTIONS: Record<string, (setDancer?: (v: boolean) => void) => void> = {
-  "My Resume": () => window.open("https://www.animesh.us/blog/resume"),
   Github: () => window.open("https://github.com/animeshchaudhri"),
   LinkedIn: () => window.open("https://www.linkedin.com/in/animeshchaudhri", "_blank"),
   "Recycle Bin": () => alert("There's nothing to delete!"),
@@ -29,6 +28,7 @@ const ICON_APPS: Record<string, App> = {
   Doom:         { title: "Doom",         url: "https://animeshchaudhri.github.io/jsdoom/",  type: "browser",      icon: "doom" },
   "My Projects":{ title: "My Projects", url: "",                                             type: "fileBrowser",  icon: "update" },
   "My Blog":    { title: "My Blog",      url: "/blog?embed=1",                               type: "browser",      icon: "notepad" },
+  "My Resume":  { title: "My Resume",    url: "/blog/resume?embed=1",                        type: "browser",      icon: "pdf" },
 };
 
 function Desktop({ initialBlog }: { initialBlog?: string } = {}) {

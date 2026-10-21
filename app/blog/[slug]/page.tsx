@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import { marked } from "marked";
 import { getPost, getAllPosts } from "@/lib/blog";
 import { VisitorCounter } from "@/components/Blog/VisitorCounter";
 import Desktop from "@/components/Desktop/Desktop";
@@ -203,6 +204,18 @@ const STYLES = `
 
   /* Body text */
   .post-body { font-size: 15px; line-height: 1.85; color: #111; }
+  .post-body h1 {
+    font-family: 'Special Elite', 'Georgia', serif;
+    font-size: 22px;
+    color: #000080;
+    margin: 0 0 10px;
+  }
+  .post-body hr { border: none; border-top: 1px dashed #999; margin: 18px 0; }
+  .post-body table { border-collapse: collapse; margin: 0 0 14px; font-size: 14px; width: 100%; }
+  .post-body th, .post-body td { border: 1px solid #bbb; padding: 4px 8px; text-align: left; vertical-align: top; }
+  .post-body th { background: #dcdcdc; }
+  .post-body thead th:empty { display: none; }
+  .post-body tr:nth-child(even) td { background: #f5f5dc; }
   .post-body h2 {
     font-family: 'Courier New', monospace;
     font-size: 16px;
@@ -218,6 +231,8 @@ const STYLES = `
   }
   .post-body p { margin: 0 0 14px; }
   .post-body ul, .post-body ol { padding-left: 24px; margin: 0 0 14px; }
+  .post-body ul { list-style: disc; }
+  .post-body ol { list-style: decimal; }
   .post-body li { margin-bottom: 6px; }
   .post-body a { color: #0000cc; }
   .post-body a:visited { color: #551a8b; }
@@ -352,38 +367,6 @@ const STYLES = `
 `;
 
 function renderMarkdown(md: string): string {
-  const lines = md.split("\n");
-  const out: string[] = [];
-  let inList = false, inPre = false, preContent = "";
-
-  for (const line of lines) {
-    if (line.startsWith("```")) {
-      if (!inPre) { inPre = true; preContent = ""; }
-      else { out.push(`<pre><code>${esc(preContent.trimEnd())}</code></pre>`); inPre = false; }
-      continue;
-    }
-    if (inPre) { preContent += line + "\n"; continue; }
-    if (inList && !line.startsWith("- ") && !line.startsWith("* ")) { out.push("</ul>"); inList = false; }
-    if (!line.trim()) { out.push(""); continue; }
-    if (line.startsWith("## ")) { out.push(`<h2>${inl(line.slice(3))}</h2>`); continue; }
-    if (line.startsWith("### ")) { out.push(`<h3>${inl(line.slice(4))}</h3>`); continue; }
-    if (line.startsWith("#### ")) { out.push(`<h3>${inl(line.slice(5))}</h3>`); continue; }
-    if (line.startsWith("- ") || line.startsWith("* ")) {
-      if (!inList) { out.push("<ul>"); inList = true; }
-      out.push(`<li>${inl(line.slice(2))}</li>`); continue;
-    }
-    if (line.startsWith("> ")) { out.push(`<blockquote><p>${inl(line.slice(2))}</p></blockquote>`); continue; }
-    out.push(`<p>${inl(line)}</p>`);
-  }
-  if (inList) out.push("</ul>");
-  return out.join("\n");
-}
-function inl(t: string) {
-  return t.replace(/`([^`]+)`/g, "<code>$1</code>")
-    .replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>")
-    .replace(/\*(.+?)\*/g, "<em>$1</em>")
-    .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2">$1</a>');
-}
-function esc(t: string) {
-  return t.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  return marked(md, { async: false })
+    .replace(/<a href="(https?:\/\/[^"]+)"/g, '<a href="$1" target="_blank" rel="noreferrer"');
 }
