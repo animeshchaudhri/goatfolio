@@ -47,6 +47,8 @@ function DraggableWindow({
   const ref = useRef<HTMLDivElement>(null);
   const isSmallScreen = useWindowSize();
   const isFixedSize = Boolean(width || height);
+  // react-draggable preventDefaults touchstart outside `cancel`, which swallows taps on title-bar buttons
+  const cancel = `${cancelSelector}, button`;
 
   const initW = isFixedSize ? toPx(width, 750) : 600;
   const initH = isFixedSize ? toPx(height, 500) : 400;
@@ -77,6 +79,7 @@ function DraggableWindow({
     }
   };
 
+  // Windows are full-screen on small screens, so dragging them only pushes them off-screen
   if (isSmallScreen) {
     return (
       <WindowContext.Provider value={{ onMinimize: handleMinimize, onMaximize: handleMaximize }}>
@@ -86,7 +89,8 @@ function DraggableWindow({
           defaultClassName=""
           defaultClassNameDragging=""
           defaultClassNameDragged=""
-          cancel={cancelSelector}
+          cancel={cancel}
+          disabled
           defaultPosition={{ x: 0, y: 0 }}
         >
           <div
@@ -120,7 +124,7 @@ function DraggableWindow({
         defaultClassName=""
         defaultClassNameDragging=""
         defaultClassNameDragged=""
-        cancel={cancelSelector}
+        cancel={cancel}
         scale={1}
         position={maximized ? { x: 0, y: 0 } : undefined}
         defaultPosition={{ x: 0, y: 0 }}

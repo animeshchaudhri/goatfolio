@@ -129,6 +129,8 @@ Pune, India • [animesh.dev10@gmail.com](mailto:animesh.dev10@gmail.com) • [L
 
 ## Honors & Awards
 
+- Best Intern Award — Bajaj Finserv Health
+- Lord of the Logs Award — Bajaj Finserv Health
 - Winner — Techhacks 4.0 Hackathon (Jan 2024)
 - Winner — Electrothon 6.0 Hackathon (Mar 2024)
 - Winner — Smart Cataloging Hackathon (Mar 2024)
