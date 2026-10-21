@@ -8,9 +8,9 @@ import { CPWindow, Heading, Link, TaskPane, useNarrow, useNav, useOpen } from ".
 
 // Every icon this window shows (stand-ins for the Win7 artwork where not app-backed)
 const ICONS = {
-  window: iconPath(APPS["Personalization"]?.icon),
-  sounds: iconPath(APPS["Sound Settings"]?.icon),
-  screenSaver: "/icons/win7/display.svg",
+  window: APPS["Personalization"]?.icon ?? "",
+  sounds: APPS["Sound Settings"]?.icon ?? "",
+  screenSaver: "win7:screen-saver",
 };
 
 // ─── Window color (7.css --window-background-color) ──────────────────────────
@@ -190,9 +190,9 @@ function ThemesView({ style, setStyle, go }: {
     { label: "Window Color", sub: colorName(style.color), onClick: () => go("color"),
       icon: <Swatch hex={withIntensity(style.color, style.intensity)} size={36} /> },
     { label: "Sounds", sub: "Windows Default", onClick: () => open("Sound Settings"),
-      icon: <img src={ICONS.sounds} width={38} height={38} alt="" /> },
+      icon: <img src={iconPath(ICONS.sounds, 38)} width={38} height={38} alt="" /> },
     { label: "Screen Saver", sub: saver, onClick: () => open("Screen Saver Settings"),
-      icon: <img src={ICONS.screenSaver} width={42} height={42} alt="" /> },
+      icon: <img src={iconPath(ICONS.screenSaver, 42)} width={42} height={42} alt="" /> },
   ];
 
   return (

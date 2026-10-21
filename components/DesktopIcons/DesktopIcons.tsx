@@ -2,6 +2,7 @@
 import React, { useEffect, useRef } from "react";
 import styles from "./Helper.module.css";
 import { ICONS } from "./icons";
+import { iconPath } from "../Desktop/apps";
 import type { DesktopItem, IconSize, Metrics } from "./desktopModel";
 
 // One desktop icon. Selection, dragging and opening are driven by DesktopSurface.
@@ -69,7 +70,6 @@ const DesktopIcon: React.FC<DesktopIconProps> = ({
   onPointerDown, onPointerMove, onPointerUp, onDoubleClick,
 }) => {
   const small = size === "small";
-  const overlay = Math.round(metrics.icon * (small ? 0.6 : 0.36));
   return (
     <div
       data-icon-id={ghost ? undefined : item.id}
@@ -91,9 +91,9 @@ const DesktopIcon: React.FC<DesktopIconProps> = ({
           {item.overlay && (
             <img
               className={styles.overlay}
-              src={ICONS.shortcutOverlay}
-              width={overlay}
-              height={overlay}
+              src={iconPath(ICONS.shortcutOverlay, metrics.icon)}
+              width={metrics.icon}
+              height={metrics.icon}
               alt=""
               draggable={false}
             />

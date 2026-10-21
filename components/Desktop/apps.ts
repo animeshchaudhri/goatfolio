@@ -13,16 +13,16 @@ export const APPS: Record<string, App> = {
   Twitter:       { title: "Twitter",      url: "https://animeshport.netlify.app/",           type: "browser",     icon: "twitter" },
   Doom:          { title: "Doom",         url: "https://animeshchaudhri.github.io/jsdoom/",  type: "browser",     icon: "doom" },
   "My Projects": { title: "My Projects",  url: "",                                           type: "fileBrowser", icon: "win7:folder" },
-  "My Blog":     { title: "My Blog",      url: "/blog?embed=1",                              type: "browser",     icon: "notepad" },
+  "My Blog":     { title: "My Blog",      url: "/blog?embed=1",                              type: "browser",     icon: "win7:notepad" },
   "My Resume":   { title: "My Resume",    url: "/blog/resume?embed=1",                       type: "browser",     icon: "pdf" },
   "Recycle Bin": { title: "Recycle Bin",  url: "",                                           type: "recycleBin",  icon: "win7:recycle-bin" },
 
   // Start menu programs
-  "Getting started":           { title: "Getting Started",           url: "",                             type: "gettingStarted", icon: "update" },
+  "Getting started":           { title: "Getting Started",           url: "",                             type: "gettingStarted", icon: "win7:getting-started" },
   Notepad:                     { title: "Notepad",                   url: "",                             type: "Notepad",        icon: "win7:notepad" },
   "Internet Explorer":         { title: "Internet Explorer",         url: "https://www.google.com/?igu=1", type: "browser",        icon: "win7:iexplore" },
   "Sound Settings":            { title: "Sound",                     url: "",                             type: "sound",          icon: "win7:sound" },
-  "Remote Desktop Connection": { title: "Remote Desktop Connection", url: "https://www.animesh.us",       type: "browser",        icon: "computer" },
+  "Remote Desktop Connection": { title: "Remote Desktop Connection", url: "https://www.animesh.us",       type: "browser",        icon: "win7:remote-desktop" },
   Chat:                        { title: "Chat",                      url: "",                             type: "chat",           icon: "win7:messenger" },
   Horror:                      { title: "Horror",                    url: "/videos/horror.mp4",           type: "Videoplayer",    icon: "horror" },
 

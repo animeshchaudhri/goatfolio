@@ -9,8 +9,8 @@ import { CPWindow, Heading, Link, Overlay, useNarrow, useOpen } from "./ControlP
 // "keep these settings?" countdown (the browser can't actually change the mode).
 
 const ICONS = {
-  window: iconPath(APPS["Screen Resolution"]?.icon),
-  info: "/icons/win7/help.svg",
+  window: APPS["Screen Resolution"]?.icon ?? "",
+  info: "win7:info",
 };
 
 type Res = { w: number; h: number };
@@ -254,7 +254,7 @@ function Body({ options, pending, setPending, detected, onDetect, onIdentify, on
           <Monitor />
           {detected && (
             <div style={{ position: "absolute", left: 10, bottom: 8, display: "flex", alignItems: "center", gap: 5, color: "#333" }}>
-              <img src={ICONS.info} width={16} height={16} alt="" />
+              <img src={iconPath(ICONS.info, 16)} width={16} height={16} alt="" />
               Another display not detected
             </div>
           )}

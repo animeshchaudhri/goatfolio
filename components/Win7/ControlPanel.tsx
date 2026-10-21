@@ -5,44 +5,46 @@ import { APPS, iconPath } from "../Desktop/apps";
 import { Menu } from "./Chrome";
 import { CPWindow, Heading, Link, TaskPane, useNarrow, useNav, useOpen } from "./ControlPanelShell";
 
-// Every icon this window shows. App-backed ones follow APPS; the rest are stand-ins for the Win7 artwork.
-const app = (name: string) => iconPath(APPS[name]?.icon);
+// Every icon this window shows: original Win7 icon tokens, resolved per pixel size where they're drawn.
+const app = (name: string) => APPS[name]?.icon ?? "";
 const ICONS = {
   window: app("Control Panel"),
-  catSystem: "/icons/win7/cp-system.svg",
-  catNetwork: "/icons/win7/cp-network.svg",
-  catHardware: "/icons/win7/cp-hardware.svg",
-  catPrograms: "/icons/win7/cp-programs.svg",
-  catUsers: "/icons/win7/cp-users.svg",
-  catAppearance: "/icons/win7/cp-appearance.svg",
-  catClock: "/icons/win7/cp-clock.svg",
-  catEase: "/icons/win7/cp-ease.svg",
-  actionCenter: "/icons/win7/cp-system.svg",
-  firewall: "/icons/internet.png",
-  system: "/icons/computer.png",
-  windowsUpdate: "/icons/update.png",
-  backup: "/icons/win7/documents.svg",
-  networkCenter: "/icons/win7/cp-network.svg",
-  homeGroup: "/icons/computer.png",
-  internetOptions: "/icons/internet.png",
-  autoPlay: "/icons/win7/cp-programs.svg",
-  programsFeatures: "/icons/win7/cp-programs.svg",
-  userAccounts: "/icons/win7/cp-users.svg",
-  parentalControls: "/icons/win7/cp-users.svg",
-  credentialManager: "/icons/win7/cp-system.svg",
-  taskbarStart: "/icons/computer.png",
-  easeCenter: "/icons/win7/cp-ease.svg",
-  folderOptions: "/icons/win7/folder.svg",
-  dateTime: "/icons/win7/cp-clock.svg",
-  region: "/icons/win7/cp-network.svg",
-  speech: "/icons/sound.png",
-  adminTools: "/icons/computer.png",
-  deviceManager: "/icons/win7/cp-hardware.svg",
-  keyboard: "/icons/win7/cp-hardware.svg",
-  mouse: "/icons/win7/cp-hardware.svg",
-  notificationIcons: "/icons/computer.png",
-  remoteApp: "/icons/win7/cp-network.svg",
-  troubleshooting: app("Help and Support"),
+  // Category view
+  catSystem: "win7:troubleshooting",
+  catNetwork: "win7:network-internet",
+  catHardware: "win7:devices-printers",
+  catPrograms: "win7:programs-features",
+  catUsers: "win7:users-cp",
+  catAppearance: "win7:personalization",
+  catClock: "win7:clock-region",
+  catEase: "win7:ease-of-access",
+  // Applets
+  actionCenter: "win7:action-center",
+  firewall: "win7:firewall",
+  system: "win7:computer",
+  windowsUpdate: "win7:windows-update",
+  backup: "win7:backup",
+  networkCenter: "win7:network-center",
+  homeGroup: "win7:homegroup",
+  internetOptions: "win7:iexplore",
+  autoPlay: "win7:autoplay",
+  programsFeatures: "win7:programs-features",
+  userAccounts: "win7:users-cp",
+  parentalControls: "win7:parental-controls",
+  credentialManager: "win7:credential-manager",
+  taskbarStart: "win7:taskbar-start",
+  easeCenter: "win7:ease-of-access",
+  folderOptions: "win7:folder-options",
+  dateTime: "win7:date-time",
+  region: "win7:region-language",
+  speech: "win7:speech",
+  adminTools: "win7:admin-tools",
+  deviceManager: "win7:device-manager",
+  keyboard: "win7:keyboard-cp",
+  mouse: "win7:mouse-cp",
+  notificationIcons: "win7:notification-icons",
+  remoteApp: "win7:remote-desktop",
+  troubleshooting: "win7:troubleshooting",
   devices: app("Devices and Printers"),
   sound: app("Sound Settings"),
   display: app("Screen Resolution"),
@@ -227,7 +229,7 @@ const ITEMS: { label: string; to: string; icon: string }[] = [
 ];
 
 function Ico({ icon, size }: { icon: string; size: number }) {
-  return <img src={icon} width={size} height={size} alt="" style={{ flexShrink: 0, objectFit: "contain", display: "block" }} />;
+  return <img src={iconPath(icon, size)} width={size} height={size} alt="" style={{ flexShrink: 0, objectFit: "contain", display: "block" }} />;
 }
 
 // ─── View by ▾ ────────────────────────────────────────────────────────────────

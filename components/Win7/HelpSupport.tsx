@@ -9,17 +9,17 @@ import { Link, useNav, useOpen, CP_BLUE } from "./ControlPanelShell";
 // Windows Help and Support, answering questions about this site and Animesh.
 
 const ICONS = {
-  window: iconPath(APPS["Help and Support"]?.icon),
-  home: "/icons/win7/help-home.svg",
-  print: "/icons/win7/help-print.svg",
-  browse: "/icons/win7/help-browse.svg",
-  ask: "/icons/win7/help-ask.svg",
-  tip: "/icons/win7/help.svg",
-  topic: "/icons/win7/help.svg",
-  resume: iconPath(APPS["My Resume"]?.icon),
-  basics: iconPath(APPS["Computer"]?.icon),
-  github: "/icons/github.png",
-  linkedin: "/icons/linkedin.png",
+  window: APPS["Help and Support"]?.icon ?? "",
+  home: "win7:home",
+  print: "win7:printer",
+  browse: "win7:help",
+  ask: "win7:messenger",
+  tip: "win7:info",
+  topic: "win7:help",
+  resume: "win7:users-cp",
+  basics: APPS["Computer"]?.icon ?? "",
+  github: "win7:internet-shortcut",
+  linkedin: "win7:internet-shortcut",
 };
 
 type Helpers = { open: (to: string) => void; go: (id: string) => void };
@@ -45,7 +45,7 @@ function Steps({ title, steps }: { title: string; steps: React.ReactNode[] }) {
 function Tip({ children }: { children: React.ReactNode }) {
   return (
     <div style={{ display: "flex", gap: 8, margin: "12px 0", padding: "8px 10px", background: "#f4f8fc", border: "1px solid #d6e3f1" }}>
-      <img src={ICONS.tip} width={16} height={16} alt="" style={{ flexShrink: 0, marginTop: 1 }} />
+      <img src={iconPath(ICONS.tip, 16)} width={16} height={16} alt="" style={{ flexShrink: 0, marginTop: 1 }} />
       <div><b>Tip</b><br />{children}</div>
     </div>
   );
@@ -256,7 +256,7 @@ function Tool({ icon, label, onClick, arrow }: { icon?: keyof typeof ICONS; labe
         background: h ? "linear-gradient(180deg,rgba(255,255,255,0.75) 0%,rgba(225,238,252,0.6) 50%,rgba(190,215,245,0.6) 51%,rgba(220,235,252,0.7) 100%)" : "transparent",
       }}
     >
-      {icon && <img src={ICONS[icon]} width={22} height={22} alt="" />}
+      {icon && <img src={iconPath(ICONS[icon], 22)} width={22} height={22} alt="" />}
       {label && (!icon || icon === "ask") && <span>{label}</span>}
       {arrow && <span style={{ fontSize: 8, opacity: 0.7 }}>▼</span>}
     </div>
@@ -311,14 +311,14 @@ function HomePage({ h }: { h: Helpers }) {
       </div>
       <div style={{ fontSize: 15, color: CP_BLUE, marginBottom: 10 }}>Not sure where to start?</div>
       <div style={{ display: "flex", flexDirection: "column", gap: 9, paddingLeft: 4 }}>
-        {row(<img src={ICONS.resume} width={20} height={20} alt="" />, "Get to know Animesh", () => h.go("about"))}
-        {row(<img src={ICONS.basics} width={20} height={20} alt="" />, "Learn about Windows Basics", () => h.go("browse"))}
-        {row(<img src={ICONS.browse} width={20} height={20} alt="" />, "Browse Help topics", () => h.go("browse"))}
+        {row(<img src={iconPath(ICONS.resume, 20)} width={20} height={20} alt="" />, "Get to know Animesh", () => h.go("about"))}
+        {row(<img src={iconPath(ICONS.basics, 20)} width={20} height={20} alt="" />, "Learn about Windows Basics", () => h.go("browse"))}
+        {row(<img src={iconPath(ICONS.browse, 20)} width={20} height={20} alt="" />, "Browse Help topics", () => h.go("browse"))}
       </div>
       <div style={{ fontSize: 15, color: CP_BLUE, margin: "22px 0 10px" }}>More on the web</div>
       <div style={{ display: "flex", flexDirection: "column", gap: 9, paddingLeft: 4 }}>
-        {row(<img src={ICONS.github} width={20} height={20} alt="" />, "Find Animesh on GitHub", () => h.open("Github"))}
-        {row(<img src={ICONS.linkedin} width={20} height={20} alt="" />, "Connect on LinkedIn", () => h.open("LinkedIn"))}
+        {row(<img src={iconPath(ICONS.github, 20)} width={20} height={20} alt="" />, "Find Animesh on GitHub", () => h.open("Github"))}
+        {row(<img src={iconPath(ICONS.linkedin, 20)} width={20} height={20} alt="" />, "Connect on LinkedIn", () => h.open("LinkedIn"))}
       </div>
     </>
   );
@@ -331,12 +331,12 @@ function BrowsePage({ h }: { h: Helpers }) {
       {(["About Animesh", "Windows Basics"] as const).map((g) => (
         <div key={g} style={{ marginBottom: 16 }}>
           <div style={{ display: "flex", alignItems: "center", gap: 6, fontSize: 14, marginBottom: 6 }}>
-            <img src={ICONS.browse} width={18} height={18} alt="" />{g}
+            <img src={iconPath(ICONS.browse, 18)} width={18} height={18} alt="" />{g}
           </div>
           <div style={{ display: "flex", flexDirection: "column", gap: 5, paddingLeft: 26 }}>
             {TOPICS.filter((t) => t.group === g).map((t) => (
               <div key={t.id} style={{ display: "flex", gap: 6, alignItems: "center" }}>
-                <img src={ICONS.topic} width={16} height={16} alt="" />
+                <img src={iconPath(ICONS.topic, 16)} width={16} height={16} alt="" />
                 <Link onClick={() => h.go(t.id)}>{t.title}</Link>
               </div>
             ))}
@@ -476,7 +476,7 @@ export default function HelpSupport({ app, onClose, zIndex, onFocus, minimized, 
         <div style={{ position: "relative" }}>
           <StatusBar
             left={<span className="help-tool" style={{ display: "inline-flex", alignItems: "center", gap: 5, cursor: "pointer" }} onClick={() => go("contact")}>
-              <img src={ICONS.ask} width={16} height={16} alt="" />
+              <img src={iconPath(ICONS.ask, 16)} width={16} height={16} alt="" />
               More support options
             </span>}
             right={<span className="help-tool" style={{ cursor: "pointer" }} onClick={() => setMenu(menu === "online" ? null : "online")}>

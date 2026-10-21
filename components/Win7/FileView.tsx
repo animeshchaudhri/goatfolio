@@ -38,16 +38,13 @@ export const imgIcon = (src: string) => (size: number) => (
 
 export const folderIcon = imgIcon(ICONS.folder);
 
-/** Win7 shortcut badge in the bottom-left corner */
-export const withShortcut = (base: (size: number) => React.ReactNode) => (size: number) => {
-  const b = Math.max(8, Math.round(size * 0.36));
-  return (
-    <div style={{ position: "relative", width: size, height: size, flexShrink: 0 }}>
-      {base(size)}
-      <img src={iconPath(ICONS.shortcutOverlay, b)} width={b} height={b} alt="" style={{ position: "absolute", left: 0, bottom: 0 }} />
-    </div>
-  );
-};
+/** Win7 shortcut arrow: the original overlay is a full-size frame with the arrow in its bottom-left corner */
+export const withShortcut = (base: (size: number) => React.ReactNode) => (size: number) => (
+  <div style={{ position: "relative", width: size, height: size, flexShrink: 0 }}>
+    {base(size)}
+    <img src={iconPath(ICONS.shortcutOverlay, size)} width={size} height={size} alt="" style={{ position: "absolute", left: 0, top: 0 }} />
+  </div>
+);
 
 export const textIcon = imgIcon(ICONS.textFile);
 export const pdfIcon = imgIcon(ICONS.pdfFile);

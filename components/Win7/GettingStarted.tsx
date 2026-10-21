@@ -7,17 +7,17 @@ import { CPWindow, Heading, Link, useNarrow, useOpen, CP_BLUE } from "./ControlP
 
 // Getting Started, repurposed as a tour of the site: pick a task to read about it, double-click to open it.
 
-const app = (name: string) => iconPath(APPS[name]?.icon);
+const app = (name: string) => APPS[name]?.icon ?? "";
 const ICONS = {
   window: app("Getting started"),
-  resume: app("My Resume"),
+  resume: "win7:users-cp",
   projects: app("My Projects"),
   blog: app("My Blog"),
   personalize: app("Personalization"),
-  github: "/icons/github.png",
+  github: "win7:iexplore",
   chat: app("Chat"),
-  linkedin: "/icons/linkedin.png",
-  doom: app("Doom"),
+  linkedin: "win7:network",
+  doom: "win7:games",
   help: app("Help and Support"),
   go: "/icons/win7/cp-go.svg",
 };
@@ -62,7 +62,7 @@ function Body() {
         background: "linear-gradient(180deg,#ffffff 0%,#f1f7fd 45%,#dfecf9 100%)",
         boxShadow: "inset 0 1px 0 #fff",
       }}>
-        <img src={task.icon} width={narrow ? 48 : 72} height={narrow ? 48 : 72} alt=""
+        <img src={iconPath(task.icon, narrow ? 48 : 72)} width={narrow ? 48 : 72} height={narrow ? 48 : 72} alt=""
           style={{ flexShrink: 0, objectFit: "contain", filter: "drop-shadow(0 2px 3px rgba(0,0,0,0.25))" }} />
         <div style={{ minWidth: 0, display: "flex", flexDirection: "column", gap: 6 }}>
           <div style={{ fontFamily: FONT, fontSize: 15, color: CP_BLUE }}>{task.title}</div>
@@ -85,7 +85,7 @@ function Body() {
             onKeyDown={(e) => e.key === "Enter" && open(t.to)}
             style={{ display: "flex", alignItems: "center", gap: 10, padding: "8px 10px", minHeight: 50, outline: "none" }}
           >
-            <img src={t.icon} width={32} height={32} alt="" style={{ flexShrink: 0, objectFit: "contain" }} />
+            <img src={iconPath(t.icon, 32)} width={32} height={32} alt="" style={{ flexShrink: 0, objectFit: "contain" }} />
             <span style={{ lineHeight: 1.3 }}>{t.title}</span>
           </div>
         ))}

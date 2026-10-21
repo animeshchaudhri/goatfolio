@@ -32,7 +32,7 @@ type Drag = {
 };
 
 /** Explorer window for a folder created on the desktop (Library shows unknown paths as empty folders) */
-const folderApp = (title: string): App => ({ title, url: `Local Disk (C:)/Users/Animesh/Desktop/${title}`, type: "library", icon: ICONS.folder });
+const folderApp = (title: string): App => ({ title, url: `Local Disk (C:)/Users/Animesh/Desktop/${title}`, type: "library", icon: "win7:folder" });
 
 const cellKey = (c: Cell) => `${Math.round(c.col)}:${Math.round(c.row)}`;
 const clamp = (v: number, lo: number, hi: number) => Math.min(Math.max(v, lo), Math.max(lo, hi));
@@ -603,10 +603,10 @@ export default function DesktopSurface() {
     {
       label: "New",
       submenu: [
-        { label: "Folder", icon: ICONS.folder, onSelect: () => createItem("folder") },
+        { label: "Folder", icon: ICONS.newFolder, onSelect: () => createItem("folder") },
         { label: "Shortcut", icon: ICONS.newShortcut, onSelect: () => setDialog({ kind: "shortcut" }) },
         "separator",
-        { label: "Text Document", icon: ICONS.textDocument, onSelect: () => createItem("text") },
+        { label: "Text Document", icon: ICONS.newTextDocument, onSelect: () => createItem("text") },
       ],
     },
     "separator",

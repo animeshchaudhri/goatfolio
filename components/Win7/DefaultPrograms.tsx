@@ -7,14 +7,14 @@ import { CPWindow, Heading, Link, TaskPane, useNarrow, useNav, useOpen, CP_GREEN
 
 // Default Programs and its four sub pages, populated with this desktop's own programs.
 
-const app = (name: string) => iconPath(APPS[name]?.icon);
+const app = (name: string) => APPS[name]?.icon ?? "";
 const ICONS = {
   window: app("Default Programs"),
   setDefaults: app("Default Programs"),
-  associate: "/icons/notepad.png",
-  autoPlay: "/icons/win7/cp-programs.svg",
-  programAccess: "/icons/computer.png",
-  mediaPlayer: "/icons/sound.png",
+  associate: "win7:file-generic",
+  autoPlay: "win7:autoplay",
+  programAccess: "win7:computer",
+  mediaPlayer: "win7:wmp",
   go: "/icons/win7/cp-go.svg",
 };
 
@@ -29,11 +29,11 @@ const PROGRAMS: Program[] = [
     desc: "Plays digital media including music and videos." },
   { name: "My Blog", app: "My Blog", icon: app("My Blog"), handles: [".md"],
     desc: "Reads Animesh's blog posts about code, projects and random things." },
-  { name: "My Resume", app: "My Resume", icon: app("My Resume"), handles: [".pdf"],
+  { name: "My Resume", app: "My Resume", icon: "win7:documents", handles: [".pdf"],
     desc: "Shows Animesh's resume: experience, projects, publications and awards." },
   { name: "Windows Live Messenger", app: "Chat", icon: app("Chat"), handles: ["mailto"],
     desc: "Sends Animesh a message." },
-  { name: "Doom", app: "Doom", icon: app("Doom"), handles: [".wad"],
+  { name: "Doom", app: "Doom", icon: "win7:games", handles: [".wad"],
     desc: "Runs the classic 1993 first-person shooter in your browser." },
 ];
 
@@ -61,7 +61,7 @@ const defaultsFor = (): Record<string, string> =>
 
 function ProgIcon({ name, size }: { name: string; size: number }) {
   const p = PROGRAMS.find((x) => x.name === name);
-  return <img src={p?.icon} width={size} height={size} alt="" style={{ flexShrink: 0, objectFit: "contain" }} />;
+  return <img src={iconPath(p?.icon, size)} width={size} height={size} alt="" style={{ flexShrink: 0, objectFit: "contain" }} />;
 }
 
 function Footer({ children }: { children: React.ReactNode }) {
@@ -86,7 +86,7 @@ function HomeView({ go }: { go: (v: View) => void }) {
       <div style={{ display: "flex", flexDirection: "column", gap: 20, marginTop: 10 }}>
         {options.map((o) => (
           <div key={o.title} style={{ display: "flex", gap: 12, alignItems: "flex-start" }}>
-            <img src={o.icon} width={32} height={32} alt="" style={{ cursor: "pointer", flexShrink: 0 }} onClick={() => go(o.view)} />
+            <img src={iconPath(o.icon, 32)} width={32} height={32} alt="" style={{ cursor: "pointer", flexShrink: 0 }} onClick={() => go(o.view)} />
             <div style={{ display: "flex", flexDirection: "column", gap: 3 }}>
               <Link className="cp-cat" onClick={() => go(o.view)}>{o.title}</Link>
               <span style={{ color: "#333" }}>{o.desc}</span>

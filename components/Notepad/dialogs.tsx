@@ -263,7 +263,7 @@ export function SaveAsDialog({ fileName, onSave, ...o }: Owned & {
     <OwnedDialog title="Save As" width={640} {...o} bodyStyle={{ padding: 0, background: "#f0f0f0" }}>
       {folders && (<>
         <AddressBar
-          icon="/icons/win7/folder.svg" path={PLACES[loc]} searchPlaceholder={`Search ${loc}`}
+          icon="win7:folder" path={PLACES[loc]} searchPlaceholder={`Search ${loc}`}
           onBack={history.length ? () => { setLoc(history[history.length - 1]); setHistory((h) => h.slice(0, -1)); } : undefined}
         />
         <CommandBar commands={[{ label: "Organize", arrow: true, disabled: true }, { label: "New folder", disabled: true }]} />
