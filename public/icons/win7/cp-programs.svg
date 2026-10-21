@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+  <defs>
+    <radialGradient id="cpP-a" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#ffffff" /><stop offset=".35" stop-color="#d9dee4" /><stop offset=".6" stop-color="#c6e3ff" /><stop offset=".78" stop-color="#ffe7f6" /><stop offset="1" stop-color="#b9c4cf" /></radialGradient>
+    <linearGradient id="cpP-b" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#7cc0ff" /><stop offset="1" stop-color="#1557b8" /></linearGradient>
+  </defs>
+  <rect x="4" y="8" width="26" height="32" rx="2" fill="url(#cpP-b)" stroke="#0f3f86" />
+  <rect x="7" y="11" width="20" height="4" fill="#fff" opacity=".5" />
+  <circle cx="30" cy="27" r="16" fill="url(#cpP-a)" stroke="#8692a0" />
+  <circle cx="30" cy="27" r="5" fill="#f2f4f6" stroke="#8692a0" />
+  <circle cx="30" cy="27" r="2" fill="#fff" stroke="#9aa3ad" />
+  <path d="M18 18a16 16 0 0 1 22-3" fill="none" stroke="#fff" stroke-width="2.5" opacity=".7" />
+
+</svg>

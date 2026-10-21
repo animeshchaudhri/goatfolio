@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+  <defs>
+    <linearGradient id="cpU-a" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#ffe0c4" /><stop offset="1" stop-color="#e3a87a" /></linearGradient>
+    <linearGradient id="cpU-b" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#8fe060" /><stop offset="1" stop-color="#2b8a12" /></linearGradient>
+    <linearGradient id="cpU-c" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#7cc0ff" /><stop offset="1" stop-color="#1557b8" /></linearGradient>
+  </defs>
+  <circle cx="17" cy="14" r="7" fill="url(#cpU-a)" stroke="#a56c43" stroke-width=".8" />
+  <path d="M4 38c0-9 6-14 13-14s13 5 13 14z" fill="url(#cpU-b)" stroke="#1e6a0a" />
+  <circle cx="32" cy="19" r="7.5" fill="url(#cpU-a)" stroke="#a56c43" stroke-width=".8" />
+  <path d="M18 45c0-10 6.5-15 14-15s14 5 14 15z" fill="url(#cpU-c)" stroke="#0f3f86" />
+  <path d="M26 15a7 5 0 0 1 12 0" fill="#fff" opacity=".35" />
+
+</svg>

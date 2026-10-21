@@ -1,125 +1,111 @@
-import { StaticImageData } from "next/image";
-import { useState, useRef, useEffect } from "react";
-import Draggable from "react-draggable";
+"use client";
+import React, { useEffect, useRef } from "react";
 import styles from "./Helper.module.css";
-import Image from "next/image";
+import { ICONS } from "./icons";
+import type { DesktopItem, IconSize, Metrics } from "./desktopModel";
+
+// One desktop icon. Selection, dragging and opening are driven by DesktopSurface.
 
 interface DesktopIconProps {
-  title: string;
-  img: string | StaticImageData;
-  index: number;
-  maxIconsPerColumn: number;
-  doubleClick: () => void;
+  item: DesktopItem;
+  x: number;
+  y: number;
+  size: IconSize;
+  metrics: Metrics;
+  selected?: boolean;
+  /** Translucent copy that follows the pointer while dragging */
+  ghost?: boolean;
+  renaming?: boolean;
+  onRename?: (name: string | null) => void;
+  onPointerDown?: (e: React.PointerEvent<HTMLDivElement>) => void;
+  onPointerMove?: (e: React.PointerEvent<HTMLDivElement>) => void;
+  onPointerUp?: (e: React.PointerEvent<HTMLDivElement>) => void;
+  onDoubleClick?: () => void;
 }
 
-const DesktopIcon: React.FC<DesktopIconProps> = (props) => {
-  const [selected, setSelected] = useState(false);
-  const [lastTap, setLastTap] = useState(0);
-  const ref = useRef<HTMLDivElement>(null);
-
-  const iconWidth = 80;
-  const iconHeight = 90;
-  const horizontalSpacing = 20;
-  const verticalSpacing = 10;
-
-  const calculatePosition = () => {
-    const column = Math.floor(props.index / props.maxIconsPerColumn);
-    const row = props.index % props.maxIconsPerColumn;
-
-    const x = column * (iconWidth + horizontalSpacing) + 5; // Add 20px left margin
-    const y = row * (iconHeight + verticalSpacing) + 20; // Add 20px top margin
-
-    return { x, y };
+function RenameBox({ value, small, onDone }: { value: string; small: boolean; onDone: (name: string | null) => void }) {
+  const ref = useRef<HTMLTextAreaElement>(null);
+  const done = useRef(false);
+  const finish = (name: string | null) => {
+    if (done.current) return;
+    done.current = true;
+    onDone(name);
   };
-
-  const { x, y } = calculatePosition();
-  const HighlightIcon = () => {
-    setSelected(!selected);
+  const fit = () => {
+    const el = ref.current;
+    if (!el) return;
+    el.style.height = "0px";
+    el.style.height = `${el.scrollHeight}px`;
   };
-
-  const handleTap = (event: React.TouchEvent | React.MouseEvent) => {
-    event.preventDefault();
-    const currentTime = new Date().getTime();
-    const tapLength = currentTime - lastTap;
-    
-    if (event.type === 'touchstart') {
-      // Handle mobile touch events
-      if (tapLength < 300 && tapLength > 0) {
-        props.doubleClick();
-        setLastTap(0);
-      } else {
-        setLastTap(currentTime);
-        HighlightIcon();
-      }
-    } else {
-      // Handle desktop click events
-      if (event.type === 'dblclick') {
-        props.doubleClick();
-      } else {
-        HighlightIcon();
-      }
-    }
-  };
-
-  const handleClickOutside = (event: MouseEvent | TouchEvent) => {
-    if (ref.current && !ref.current.contains(event.target as Node)) {
-      setSelected(false);
-    }
-  };
-
   useEffect(() => {
-    document.addEventListener("mousedown", handleClickOutside);
-    document.addEventListener("touchstart", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-      document.removeEventListener("touchstart", handleClickOutside);
-    };
+    const el = ref.current;
+    if (!el) return;
+    el.focus();
+    el.select();
+    fit();
   }, []);
   return (
-    <Draggable 
-      nodeRef={ref as React.RefObject<HTMLElement>}
-      bounds="parent"
-      defaultClassName=""
-      defaultClassNameDragging=""
-      defaultClassNameDragged=""
+    <textarea
+      ref={ref}
+      className={small ? `${styles.rename} ${styles.renameSmall}` : styles.rename}
+      defaultValue={value}
+      spellCheck={false}
+      rows={1}
+      onInput={fit}
+      onPointerDown={(e) => e.stopPropagation()}
+      onDoubleClick={(e) => e.stopPropagation()}
+      onKeyDown={(e) => {
+        e.stopPropagation();
+        if (e.key === "Enter") { e.preventDefault(); finish(e.currentTarget.value); }
+        if (e.key === "Escape") { e.preventDefault(); finish(null); }
+      }}
+      onBlur={(e) => finish(e.currentTarget.value)}
+    />
+  );
+}
+
+const DesktopIcon: React.FC<DesktopIconProps> = ({
+  item, x, y, size, metrics, selected, ghost, renaming, onRename,
+  onPointerDown, onPointerMove, onPointerUp, onDoubleClick,
+}) => {
+  const small = size === "small";
+  const overlay = Math.round(metrics.icon * (small ? 0.6 : 0.36));
+  return (
+    <div
+      data-icon-id={ghost ? undefined : item.id}
+      className={`${styles.icon} ${small ? styles.small : ""} ${ghost ? styles.ghost : ""}`}
+      style={{ left: x, top: y, width: metrics.cellW }}
+      onPointerDown={onPointerDown}
+      onPointerMove={onPointerMove}
+      onPointerUp={onPointerUp}
+      onPointerCancel={onPointerUp}
+      onDoubleClick={onDoubleClick}
     >
       <div
-        style={{ top: y, left: x }}
-        onDoubleClick={(e) => {
-          e.preventDefault();
-          props.doubleClick();
-        }}
-        onClick={(e) => {
-          if (e.detail === 1) { // Only handle single clicks
-            handleTap(e);
-          }
-        }}
-        onTouchStart={handleTap}
-        className={`${styles.icon} touch-manipulation`}
-        ref={ref}
+        data-icon-box=""
+        className={`${styles.box} ${selected ? styles.selected : ""}`}
+        style={{ width: metrics.boxW }}
       >
-        <div className="flex flex-col items-center">
-          <div
-            className={selected ? styles.iconimage_selected : styles.iconimage }
-          >
-            <Image
-              width={45}
-              height={45}
-              style={{ maxWidth: "100%" }}
-              src={props.img}
-              alt="icon"
-              loading="eager"
+        <div className={styles.image} style={{ width: metrics.icon, height: metrics.icon }}>
+          <img src={item.img} width={metrics.icon} height={metrics.icon} alt="" draggable={false} />
+          {item.overlay && (
+            <img
+              className={styles.overlay}
+              src={ICONS.shortcutOverlay}
+              width={overlay}
+              height={overlay}
+              alt=""
+              draggable={false}
             />
-          </div>
-          <div
-          className={selected ? styles.iconlabel_selected : styles.iconlabel}
-        >
-          <p>{props.title}</p>
+          )}
         </div>
-        </div>
-        
+        {renaming && onRename ? (
+          <RenameBox value={item.title} small={small} onDone={onRename} />
+        ) : (
+          <div className={`${styles.label} ${selected ? styles.labelFull : ""}`}>{item.title}</div>
+        )}
       </div>
-    </Draggable>
+    </div>
   );
 };
 

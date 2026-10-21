@@ -1,38 +1,20 @@
 "use client";
-import React, { useState } from "react";
-import DesktopIcon from "../DesktopIcons/DesktopIcons";
-import RightClick from "../Navigation/RightClick";
+import React, { useCallback, useEffect, useMemo, useState } from "react";
+import DesktopSurface from "../DesktopIcons/DesktopSurface";
 import Taskbar from "../Navigation/Taskbar";
-import Browser from "../Browser/Browser";
 import "7.css/dist/7.css";
-import FileBrowser from "../FileBrowser/FileBroswer";
-import { desktopIcons } from "../Icons";
-import Notepad from "../Notepad/Notepad";
-import Videoplayer from "../Videoplayer/Videoplayer";
+import GadgetLayer from "../Gadgets/GadgetLayer";
+import { GadgetsContext, useGadgetsState } from "../Gadgets/GadgetsContext";
 import GreenScreenDancer from "../Dancer/GreenScreenDancer";
-import MyComputer from "../MyComputer/MyComputer";
+import { APPS, ACTIONS, type App } from "./apps";
+import { WINDOWS } from "./windows";
+import { DesktopContext } from "./DesktopContext";
 
-export type App = { title: string; url: string; type: string; icon?: string };
+export type { App } from "./apps";
 
-const ICON_ACTIONS: Record<string, (setDancer?: (v: boolean) => void) => void> = {
-  Github: () => window.open("https://github.com/animeshchaudhri"),
-  LinkedIn: () => window.open("https://www.linkedin.com/in/animeshchaudhri", "_blank"),
-  "Recycle Bin": () => alert("There's nothing to delete!"),
-  Courage: (_setDancer) => _setDancer?.(true),
-};
-
-const ICON_APPS: Record<string, App> = {
-  Computer:     { title: "Computer",     url: "",                                            type: "myComputer",   icon: "computer" },
-  Internet:     { title: "Internet",     url: "https://www.google.com/?igu=1",              type: "browser",      icon: "internet" },
-  Twitter:      { title: "Twitter",      url: "https://animeshport.netlify.app/",            type: "browser",      icon: "twitter" },
-  Doom:         { title: "Doom",         url: "https://animeshchaudhri.github.io/jsdoom/",  type: "browser",      icon: "doom" },
-  "My Projects":{ title: "My Projects", url: "",                                             type: "fileBrowser",  icon: "update" },
-  "My Blog":    { title: "My Blog",      url: "/blog?embed=1",                               type: "browser",      icon: "notepad" },
-  "My Resume":  { title: "My Resume",    url: "/blog/resume?embed=1",                        type: "browser",      icon: "pdf" },
-};
+const DEFAULT_WALLPAPER = "/images/wallpaper2.jpg";
 
 function Desktop({ initialBlog }: { initialBlog?: string } = {}) {
-  const [rightClickPos, setRightClickPos] = useState<{ x: number; y: number } | null>(null);
   const [openApps, setOpenApps] = useState<App[]>(() =>
     initialBlog
       ? [{ title: "My Blog", url: `/blog/${initialBlog}?embed=1`, type: "browser", icon: "notepad" }]
@@ -40,25 +22,46 @@ function Desktop({ initialBlog }: { initialBlog?: string } = {}) {
   );
   const [minimizedApps, setMinimizedApps] = useState<Set<string>>(new Set());
   const [showDancer, setShowDancer] = useState(false);
+  const [wallpaper, setWallpaperState] = useState(DEFAULT_WALLPAPER);
+  const gadgets = useGadgetsState();
+
+  useEffect(() => {
+    const saved = localStorage.getItem("wallpaper");
+    if (saved) setWallpaperState(saved);
+  }, []);
+
+  const setWallpaper = useCallback((w: string) => {
+    setWallpaperState(w);
+    localStorage.setItem("wallpaper", w);
+  }, []);
 
   const closeApp = (title: string) => {
     setOpenApps((prev) => prev.filter((app) => app.title !== title));
     setMinimizedApps((prev) => { const s = new Set(prev); s.delete(title); return s; });
   };
 
-  const addApp = (newApp: App) => {
-    setOpenApps((prev) =>
-      prev.some((app) => app.title === newApp.title) ? prev : [...prev, newApp]
-    );
-  };
-
-  const focusApp = (title: string) => {
+  const focusApp = useCallback((title: string) => {
     setOpenApps((prev) => {
       const app = prev.find((a) => a.title === title);
       if (!app) return prev;
       return [...prev.filter((a) => a.title !== title), app];
     });
-  };
+  }, []);
+
+  const addApp = useCallback((newApp: App) => {
+    setOpenApps((prev) =>
+      prev.some((app) => app.title === newApp.title)
+        ? [...prev.filter((a) => a.title !== newApp.title), prev.find((a) => a.title === newApp.title)!]
+        : [...prev, newApp]
+    );
+    setMinimizedApps((prev) => { const s = new Set(prev); s.delete(newApp.title); return s; });
+  }, []);
+
+  const openApp = useCallback((target: string | App) => {
+    if (typeof target !== "string") addApp(target);
+    else if (ACTIONS[target]) ACTIONS[target]({ showDancer: () => setShowDancer(true) });
+    else if (APPS[target]) addApp(APPS[target]);
+  }, [addApp]);
 
   const minimizeApp = (title: string) => {
     setMinimizedApps((prev) => { const s = new Set(prev); s.add(title); return s; });
@@ -67,61 +70,48 @@ function Desktop({ initialBlog }: { initialBlog?: string } = {}) {
   const taskbarClick = (title: string) => {
     if (minimizedApps.has(title)) {
       setMinimizedApps((prev) => { const s = new Set(prev); s.delete(title); return s; });
-      focusApp(title);
-    } else {
-      focusApp(title);
     }
+    focusApp(title);
   };
 
-  const iconClicked = (title: string) => {
-    if (ICON_ACTIONS[title]) {
-      ICON_ACTIONS[title](setShowDancer);
-    } else if (ICON_APPS[title]) {
-      addApp(ICON_APPS[title]);
-    }
-  };
+  const desktop = useMemo(() => ({ openApp, wallpaper, setWallpaper }), [openApp, wallpaper, setWallpaper]);
+  const isImage = wallpaper.startsWith("/") || wallpaper.startsWith("http");
 
   return (
-    <div
-      className="absolute inset-0 z-100 overflow-hidden bg-[url('/images/wallpaper2.jpg')] bg-center bg-cover bg-no-repeat"
-      onContextMenu={(e) => { e.preventDefault(); setRightClickPos({ x: e.clientX, y: e.clientY }); }}
-      onClick={() => setRightClickPos(null)}
-    >
-      {desktopIcons.map((icon, index) => (
-        <DesktopIcon
-          key={icon.title}
-          title={icon.title}
-          img={icon.img}
-          index={index}
-          maxIconsPerColumn={6}
-          doubleClick={() => iconClicked(icon.title)}
-        />
-      ))}
+    <DesktopContext.Provider value={desktop}>
+    <GadgetsContext.Provider value={gadgets}>
+      <div
+        className="absolute inset-0 z-100 overflow-hidden bg-center bg-cover bg-no-repeat"
+        style={isImage ? { backgroundImage: `url('${wallpaper}')` } : { backgroundColor: wallpaper }}
+        onContextMenu={(e) => {
+          // No browser menu on the fake OS, except where text editing/links need it
+          if (!(e.target as Element).closest("input, textarea, [contenteditable=true], a")) e.preventDefault();
+        }}
+      >
+        <DesktopSurface />
+        <GadgetLayer />
 
-      <Taskbar openApps={openApps} minimizedApps={minimizedApps} closeApp={closeApp} addApp={addApp} onTaskbarClick={taskbarClick} />
+        <Taskbar openApps={openApps} minimizedApps={minimizedApps} closeApp={closeApp} onTaskbarClick={taskbarClick} />
 
-      {rightClickPos && (
-        <div style={{ position: "absolute", top: rightClickPos.y, left: rightClickPos.x, zIndex: 9999 }}>
-          <RightClick />
-        </div>
-      )}
+        {showDancer && <GreenScreenDancer onClose={() => setShowDancer(false)} />}
 
-      {showDancer && <GreenScreenDancer onClose={() => setShowDancer(false)} />}
-
-      {openApps.map((app, index) =>
-        app.type === "browser" ? (
-          <Browser key={app.title} setIsWindowOpen={() => closeApp(app.title)} url={app.url} title={app.title} zIndex={index} onFocus={() => focusApp(app.title)} minimized={minimizedApps.has(app.title)} onMinimize={() => minimizeApp(app.title)} />
-        ) : app.type === "fileBrowser" ? (
-          <FileBrowser key={app.title} setIsWindowOpen={() => closeApp(app.title)} title={app.title} zIndex={index} onFocus={() => focusApp(app.title)} minimized={minimizedApps.has(app.title)} onMinimize={() => minimizeApp(app.title)} />
-        ) : app.type === "Notepad" ? (
-          <Notepad key={app.title} handleClose={() => closeApp(app.title)} zIndex={index} onFocus={() => focusApp(app.title)} minimized={minimizedApps.has(app.title)} onMinimize={() => minimizeApp(app.title)} />
-        ) : app.type === "Videoplayer" ? (
-          <Videoplayer key={app.title} setIsWindowOpen={() => closeApp(app.title)} url={app.url} title={app.title} zIndex={index} onFocus={() => focusApp(app.title)} minimized={minimizedApps.has(app.title)} onMinimize={() => minimizeApp(app.title)} />
-        ) : app.type === "myComputer" ? (
-          <MyComputer key={app.title} setIsWindowOpen={() => closeApp(app.title)} zIndex={index} onFocus={() => focusApp(app.title)} minimized={minimizedApps.has(app.title)} onMinimize={() => minimizeApp(app.title)} />
-        ) : null
-      )}
-    </div>
+        {openApps.map((app, index) => {
+          const Window = WINDOWS[app.type];
+          return Window ? (
+            <Window
+              key={app.title}
+              app={app}
+              zIndex={index}
+              onClose={() => closeApp(app.title)}
+              onFocus={() => focusApp(app.title)}
+              minimized={minimizedApps.has(app.title)}
+              onMinimize={() => minimizeApp(app.title)}
+            />
+          ) : null;
+        })}
+      </div>
+    </GadgetsContext.Provider>
+    </DesktopContext.Provider>
   );
 }
 

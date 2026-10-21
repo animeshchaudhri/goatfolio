@@ -18,6 +18,8 @@ interface DraggableWindowProps {
   onFocus?: () => void;
   minimized?: boolean;
   onMinimize?: () => void;
+  /** Dialogs pass false: Win7 dialogs have a fixed size */
+  resizable?: boolean;
   children: React.ReactNode;
 }
 
@@ -42,6 +44,7 @@ function DraggableWindow({
   onFocus,
   minimized = false,
   onMinimize,
+  resizable = true,
   children,
 }: DraggableWindowProps) {
   const ref = useRef<HTMLDivElement>(null);
@@ -97,6 +100,8 @@ function DraggableWindow({
             ref={ref}
             className={`absolute ${className}`}
             style={{
+              // inline so 7.css's `.window { position: relative }` can't stack windows below the screen
+              position: "absolute",
               top: 0,
               left: 0,
               width: "100vw",
@@ -146,7 +151,7 @@ function DraggableWindow({
             onResize={onResize}
             minConstraints={[260, 28]}
             maxConstraints={[window.innerWidth, window.innerHeight]}
-            resizeHandles={maximized ? [] : ["se", "sw", "ne", "nw", "e", "w", "n", "s"]}
+            resizeHandles={maximized || !resizable ? [] : ["se", "sw", "ne", "nw", "e", "w", "n", "s"]}
             className={`${className}`}
             style={{ overflow: "hidden", display: "flex", flexDirection: "column" }}
           >

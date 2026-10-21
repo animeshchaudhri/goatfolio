@@ -1,9 +1,8 @@
 "use client";
 import React, { useCallback } from "react";
-import Filenavbar from "./Filenavbar";
 import Portfolio from "./Portfolio";
-import Topbar from "./Navigation";
 import DraggableWindow from "../DraggableWindow/DraggableWindow";
+import { EXPLORER_CANCEL } from "../Win7/Chrome";
 
 function FileBrowser({
   setIsWindowOpen,
@@ -24,20 +23,16 @@ function FileBrowser({
 
   return (
     <DraggableWindow
-      cancelSelector=".window-body"
+      cancelSelector={EXPLORER_CANCEL}
       zIndex={zIndex}
-      maxWidth="820px"
-      maxHeight="80vh"
+      width="780px"
+      height="520px"
       onFocus={onFocus}
       minimized={minimized}
       onMinimize={onMinimize}
-      className="window active rounded-md shadow-lg bg-[#805ba5]"
+      className="window active"
     >
-      <Topbar title={title} onClose={handleClose} />
-      <div className="window-body has-space" style={{ overflowY: "auto" }}>
-        <Filenavbar />
-        <Portfolio />
-      </div>
+      <Portfolio title={title} onClose={handleClose} />
     </DraggableWindow>
   );
 }

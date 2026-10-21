@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+  <defs>
+    <linearGradient id="bezel" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#5b5f66"/><stop offset=".5" stop-color="#2b2e33"/><stop offset="1" stop-color="#121417"/></linearGradient>
+    <linearGradient id="screen" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#bfe6ff"/><stop offset=".45" stop-color="#3c9be3"/><stop offset="1" stop-color="#0d4fa3"/></linearGradient>
+    <linearGradient id="stand" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#9aa0a8"/><stop offset="1" stop-color="#4a4f57"/></linearGradient>
+    <linearGradient id="gloss" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fff" stop-opacity=".55"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+  </defs>
+  <path d="M19 35h10l2 6H17z" fill="url(#stand)"/>
+  <rect x="12" y="40" width="24" height="3" rx="1.5" fill="#3d4148"/>
+  <rect x="3" y="6" width="42" height="30" rx="2.5" fill="url(#bezel)"/>
+  <rect x="5.5" y="8.5" width="37" height="24" fill="url(#screen)"/>
+  <path d="M5.5 8.5h37v9c-12 3-25 3-37 0z" fill="url(#gloss)"/>
+  <path d="M8 30c6-7 14-10 32-10v12.5H8z" fill="#ffffff" opacity=".18"/>
+  <rect x="3.5" y="6.5" width="41" height="29" rx="2" fill="none" stroke="#fff" stroke-opacity=".25"/>
+</svg>

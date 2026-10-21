@@ -1,11 +1,11 @@
 export const desktopIcons = [
   {
     title: "Computer",
-    img: "/icons/computer.png",
+    img: "/icons/win7/computer-48.png",
   },
   {
     title: "Internet",
-    img: "/icons/internet.png",
+    img: "/icons/win7/iexplore-48.png",
   },
   {
     title: "My Resume",
@@ -25,7 +25,7 @@ export const desktopIcons = [
   },
   {
     title: "Recycle Bin",
-    img: "/icons/recyclebin.png",
+    img: "/icons/win7/recycle-bin-48.png",
   },
   {
     title: "Doom",
@@ -33,11 +33,11 @@ export const desktopIcons = [
   },
   {
     title: "My Projects",
-    img: "/icons/doom.png",
+    img: "/icons/win7/folder-48.png",
   },
   {
     title: "My Blog",
-    img: "/icons/notepad.png",
+    img: "/icons/win7/notepad-48.png",
   },
   {
     title: "Courage",
@@ -45,13 +45,14 @@ export const desktopIcons = [
   },
 ];
 
-export const programs = [
-  { name: "Getting started", icon: "icons/update.png" },
-  { name: "Notepad", icon: "icons/notepad.png" },
-  { name: "Internet Explorer", icon: "icons/internet.png" },
-  { name: "Sound Settings", icon: "icons/sound.png" },
-  { name: "Remote Desktop Connection", icon: "icons/computer.png" },
-  { name: "Pet", icon: "icons/courage.png" },
-  { name: "Chat", icon: "icons/chat.png" },
-  { name: "Horror", icon: "icons/horror.png" },
+// Start menu left column: `name` is the APPS / ACTIONS key (icons come from there); pinned programs sit above the separator
+export const programs: { name: string; label?: string; pinned?: boolean }[] = [
+  { name: "Internet Explorer", pinned: true },
+  { name: "Notepad", pinned: true },
+  { name: "Getting started", label: "Getting Started" },
+  { name: "Sound Settings" },
+  { name: "Remote Desktop Connection" },
+  { name: "Pet" },
+  { name: "Chat" },
+  { name: "Horror" },
 ];
