@@ -1,0 +1,11 @@
+job,owner,every_hours,runs_per_week,source
+LogKit log job,Nothing,6,28.0,"com.nothing.logkit PeriodicJobService, interval 6h"
+LogKit log job (Wi-Fi + charging),Nothing,6,28.0,"com.nothing.logkit PeriodicJobService, interval 6h, needs Wi-Fi + charging"
+Experience daily job,Nothing,24,7.0,"com.nothing.proxy experience.DailyJobService, interval 1d"
+Brightness tracking upload,Nothing,24,7.0,"system alarm com.nothing.screen_brightness.UPLOAD_TRACK_RESULT, midnight"
+Sensor monitor tracking upload,Nothing,24,7.0,"system alarm com.nothing.sensor_monitor.UPLOAD_TRACK_RESULT, midnight"
+System UI tracking upload,Nothing,24,7.0,"System UI alarm com.nothing.systemui.UPLOAD_TRACK_RESULT, midnight"
+Remote config fetch,Nothing,168,1.0,"com.nothing.proxy onlineconfig.ConfigJobService, interval 7d, needs internet"
+Proxy data job,Nothing,720,0.23,"com.nothing.proxy periodic.DataJobService, interval 30d"
+Aura daily app tasks (appmanager),ironSource,12,14.0,"Aura DailyAppTasksJobService, min latency 12h, needs internet"
+Aura daily app tasks (SDK),ironSource,12,14.0,"Aura sdk daily_task.DailyAppTasksJobService, min latency 12h, needs internet"

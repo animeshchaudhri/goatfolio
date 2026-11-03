@@ -1,0 +1,24 @@
+group,field
+Device identity,device_id
+Device identity,device_id2
+Device identity,device_mode
+Device identity,device_category
+Device identity,device_color
+Device identity,brand_name
+Device identity,ram_size
+Device identity,rom_size
+Software,system_version
+Software,brand_os_version
+Software,project_name
+Software,app_name
+Software,package_name
+Software,app_version
+SIM and network,operator1
+SIM and network,operator2
+SIM and network,sim_country_code
+SIM and network,network_type
+Locale,language
+The event itself,event_name
+The event itself,event_params_key
+The event itself,event_params_value_string_value
+The event itself,event_time

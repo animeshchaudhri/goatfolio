@@ -1,0 +1,701 @@
+component,day,active_2h_windows,sent_KB,received_KB
+Nothing Weather,2026-07-27,3,66.5,174.2
+Nothing Weather,2026-07-28,12,412.2,1057.5
+Nothing Weather,2026-07-29,12,318.8,906.1
+Nothing Weather,2026-07-30,11,405.1,1112.4
+Nothing Weather,2026-07-31,12,401.7,930.1
+Nothing Weather,2026-08-01,11,253.4,694.1
+Nothing Weather,2026-08-02,12,309.0,913.1
+Nothing Weather,2026-08-03,11,313.8,788.6
+Nothing Weather,2026-08-04,11,199.6,596.3
+Nothing Weather,2026-08-05,12,194.7,562.3
+Nothing Weather,2026-08-06,11,306.2,768.6
+Nothing Weather,2026-08-07,12,326.7,833.2
+Nothing Weather,2026-08-08,11,195.8,551.0
+Nothing Weather,2026-08-09,12,205.0,580.7
+Nothing Weather,2026-08-10,11,261.6,602.5
+Nothing Weather,2026-08-11,12,287.4,782.1
+Nothing Weather,2026-08-12,12,339.1,897.9
+Nothing Weather,2026-08-13,10,230.7,591.4
+Nothing Weather,2026-08-14,12,281.9,797.8
+Nothing Weather,2026-08-15,12,334.0,843.5
+Nothing Weather,2026-08-16,12,325.2,858.8
+Nothing Weather,2026-08-17,12,385.4,948.2
+Nothing Weather,2026-08-18,11,225.6,620.6
+Nothing Weather,2026-08-19,9,298.7,714.2
+Nothing Weather,2026-08-20,12,147.2,398.8
+Nothing Weather,2026-08-21,12,330.5,788.7
+Nothing Weather,2026-08-22,12,335.7,793.3
+Nothing Weather,2026-08-23,11,202.4,588.9
+Nothing Weather,2026-08-24,11,246.6,604.6
+Nothing Weather,2026-08-25,10,334.2,823.4
+Nothing Weather,2026-08-26,12,410.4,1150.9
+Nothing Weather,2026-08-27,10,280.1,751.5
+Nothing Weather,2026-08-28,12,396.5,1007.9
+Nothing Weather,2026-08-29,11,321.4,862.4
+Nothing Weather,2026-08-30,10,181.7,553.6
+Nothing Weather,2026-08-31,12,415.6,1191.5
+Nothing Weather,2026-09-01,12,423.6,1116.9
+Nothing Weather,2026-09-02,12,426.3,1028.4
+Nothing Weather,2026-09-03,11,247.3,689.0
+Nothing Weather,2026-09-04,12,373.9,922.5
+Nothing Weather,2026-09-05,12,230.3,611.6
+Nothing Weather,2026-09-06,11,192.3,543.1
+Nothing Weather,2026-09-07,11,304.3,777.2
+Nothing Weather,2026-09-08,10,214.2,627.2
+Nothing Weather,2026-09-09,11,338.2,889.8
+Nothing Weather,2026-09-10,11,214.1,616.4
+Nothing Weather,2026-09-11,10,215.6,650.5
+Nothing Weather,2026-09-12,12,364.3,1022.4
+Nothing Weather,2026-09-13,11,338.7,952.4
+Nothing Weather,2026-09-14,9,247.6,705.2
+Nothing Weather,2026-09-15,12,257.5,739.5
+Nothing Weather,2026-09-16,10,230.5,699.2
+Nothing Weather,2026-09-17,12,249.5,779.5
+Nothing Weather,2026-09-18,10,231.4,683.6
+Nothing Weather,2026-09-19,11,150.5,458.6
+Nothing Weather,2026-09-20,9,263.6,783.8
+Nothing Weather,2026-09-21,12,247.2,742.0
+Nothing Weather,2026-09-22,12,195.3,567.1
+Nothing Weather,2026-09-23,12,289.3,818.1
+Nothing Weather,2026-09-24,12,321.1,909.7
+Nothing Weather,2026-09-25,12,332.8,964.5
+Nothing Weather,2026-09-26,12,333.5,858.6
+Nothing Weather,2026-09-27,12,377.0,839.4
+Nothing Weather,2026-09-28,11,234.9,624.3
+Nothing Weather,2026-09-29,12,269.9,772.8
+Nothing Weather,2026-09-30,12,296.5,831.8
+Nothing Weather,2026-10-01,11,243.3,687.8
+Nothing Weather,2026-10-02,12,198.2,606.0
+Nothing Weather,2026-10-03,11,310.0,811.5
+Nothing Weather,2026-10-04,11,248.6,700.0
+Nothing Weather,2026-10-05,12,252.9,736.0
+Nothing Weather,2026-10-06,9,256.0,691.3
+Nothing Weather,2026-10-07,11,281.8,775.6
+Nothing Weather,2026-10-08,11,313.9,864.0
+Nothing Weather,2026-10-09,12,223.2,633.5
+Nothing Weather,2026-10-10,10,141.3,463.4
+Nothing Weather,2026-10-11,10,129.7,416.6
+Nothing Weather,2026-10-12,12,290.1,817.4
+Nothing Weather,2026-10-13,11,285.6,802.3
+Nothing Weather,2026-10-14,12,315.9,889.2
+Nothing Weather,2026-10-15,12,265.6,749.5
+Nothing Weather,2026-10-16,11,237.6,713.2
+Nothing Weather,2026-10-17,12,315.8,836.7
+Nothing Weather,2026-10-18,10,192.8,571.3
+Nothing Weather,2026-10-19,12,267.0,775.1
+Nothing Weather,2026-10-20,11,298.2,866.7
+Nothing Weather,2026-10-21,11,325.0,895.6
+Nothing Weather,2026-10-22,12,285.5,818.3
+Nothing Weather,2026-10-23,12,307.6,825.7
+Nothing Weather,2026-10-24,9,149.9,464.4
+Nothing Weather,2026-10-25,12,265.2,701.9
+Nothing Weather,2026-10-26,12,300.9,885.5
+Nothing Weather,2026-10-27,12,337.7,957.6
+Nothing Weather,2026-10-28,12,279.6,786.4
+Nothing Weather,2026-10-29,11,280.5,770.5
+Nothing Weather,2026-10-30,12,302.9,864.9
+Nothing Weather,2026-10-31,7,149.0,438.2
+Nothing Weather,2026-11-01,10,126.6,361.5
+Nothing Weather,2026-11-02,11,208.0,533.8
+Nothing Weather,2026-11-03,9,86.3,253.1
+Nothing Universal Search,2026-07-27,3,15.1,229.1
+Nothing Universal Search,2026-07-28,12,291.3,2615.3
+Nothing Universal Search,2026-07-29,11,83.9,886.2
+Nothing Universal Search,2026-07-30,9,53.7,531.4
+Nothing Universal Search,2026-07-31,10,104.0,806.0
+Nothing Universal Search,2026-08-01,11,72.4,741.4
+Nothing Universal Search,2026-08-02,11,115.7,1379.3
+Nothing Universal Search,2026-08-03,11,176.0,1745.5
+Nothing Universal Search,2026-08-04,10,69.8,923.8
+Nothing Universal Search,2026-08-05,12,78.1,764.4
+Nothing Universal Search,2026-08-06,12,86.1,979.7
+Nothing Universal Search,2026-08-07,11,92.2,889.9
+Nothing Universal Search,2026-08-08,11,94.5,1028.7
+Nothing Universal Search,2026-08-09,9,70.2,649.1
+Nothing Universal Search,2026-08-10,12,91.5,878.9
+Nothing Universal Search,2026-08-11,10,66.7,725.7
+Nothing Universal Search,2026-08-12,11,117.6,1169.5
+Nothing Universal Search,2026-08-13,9,58.9,676.4
+Nothing Universal Search,2026-08-14,11,119.5,1189.2
+Nothing Universal Search,2026-08-15,11,114.6,1021.5
+Nothing Universal Search,2026-08-16,10,100.7,766.9
+Nothing Universal Search,2026-08-17,12,162.1,1691.6
+Nothing Universal Search,2026-08-18,12,89.0,1091.2
+Nothing Universal Search,2026-08-19,9,89.0,867.7
+Nothing Universal Search,2026-08-20,9,97.1,1030.3
+Nothing Universal Search,2026-08-21,11,84.6,920.6
+Nothing Universal Search,2026-08-22,12,215.4,1867.2
+Nothing Universal Search,2026-08-23,11,126.2,1489.9
+Nothing Universal Search,2026-08-24,11,178.2,2149.4
+Nothing Universal Search,2026-08-25,12,107.4,1167.5
+Nothing Universal Search,2026-08-26,12,83.5,909.9
+Nothing Universal Search,2026-08-27,7,70.6,673.2
+Nothing Universal Search,2026-08-28,10,79.0,746.0
+Nothing Universal Search,2026-08-29,11,93.5,1016.7
+Nothing Universal Search,2026-08-30,10,44.9,631.2
+Nothing Universal Search,2026-08-31,12,96.2,1126.6
+Nothing Universal Search,2026-09-01,12,85.7,915.3
+Nothing Universal Search,2026-09-02,12,196.5,1903.8
+Nothing Universal Search,2026-09-03,10,80.0,782.3
+Nothing Universal Search,2026-09-04,11,65.3,660.2
+Nothing Universal Search,2026-09-05,10,77.6,811.3
+Nothing Universal Search,2026-09-06,12,45.2,623.4
+Nothing Universal Search,2026-09-07,11,76.3,833.9
+Nothing Universal Search,2026-09-08,12,72.7,967.5
+Nothing Universal Search,2026-09-09,10,95.5,1034.1
+Nothing Universal Search,2026-09-10,12,87.7,1022.3
+Nothing Universal Search,2026-09-11,12,127.0,1494.2
+Nothing Universal Search,2026-09-12,11,165.3,1806.3
+Nothing Universal Search,2026-09-13,11,91.0,1014.9
+Nothing Universal Search,2026-09-14,8,54.4,638.9
+Nothing Universal Search,2026-09-15,10,49.5,604.5
+Nothing Universal Search,2026-09-16,11,77.2,906.1
+Nothing Universal Search,2026-09-17,12,60.8,811.1
+Nothing Universal Search,2026-09-18,12,78.6,811.4
+Nothing Universal Search,2026-09-19,12,81.1,756.7
+Nothing Universal Search,2026-09-20,9,67.2,740.6
+Nothing Universal Search,2026-09-21,11,71.2,771.6
+Nothing Universal Search,2026-09-22,11,88.5,1123.6
+Nothing Universal Search,2026-09-23,11,94.5,1133.4
+Nothing Universal Search,2026-09-24,11,82.2,816.7
+Nothing Universal Search,2026-09-25,12,128.9,1414.2
+Nothing Universal Search,2026-09-26,10,261.2,2379.3
+Nothing Universal Search,2026-09-27,10,119.7,1054.7
+Nothing Universal Search,2026-09-28,11,77.7,864.6
+Nothing Universal Search,2026-09-29,11,108.0,1339.3
+Nothing Universal Search,2026-09-30,12,119.8,1224.5
+Nothing Universal Search,2026-10-01,10,65.2,664.8
+Nothing Universal Search,2026-10-02,11,90.4,990.7
+Nothing Universal Search,2026-10-03,12,94.6,903.2
+Nothing Universal Search,2026-10-04,12,75.2,811.8
+Nothing Universal Search,2026-10-05,11,59.2,583.7
+Nothing Universal Search,2026-10-06,9,88.9,942.7
+Nothing Universal Search,2026-10-07,12,138.5,1703.1
+Nothing Universal Search,2026-10-08,10,96.9,919.6
+Nothing Universal Search,2026-10-09,10,48.1,658.6
+Nothing Universal Search,2026-10-10,10,90.2,1089.9
+Nothing Universal Search,2026-10-11,9,89.4,1214.8
+Nothing Universal Search,2026-10-12,12,111.6,1254.3
+Nothing Universal Search,2026-10-13,11,153.6,1518.1
+Nothing Universal Search,2026-10-14,12,149.3,1589.7
+Nothing Universal Search,2026-10-15,10,105.9,1146.6
+Nothing Universal Search,2026-10-16,10,97.5,1039.1
+Nothing Universal Search,2026-10-17,12,105.7,1230.3
+Nothing Universal Search,2026-10-18,8,40.2,520.4
+Nothing Universal Search,2026-10-19,11,75.7,872.7
+Nothing Universal Search,2026-10-20,10,117.5,1381.7
+Nothing Universal Search,2026-10-21,12,102.0,1166.2
+Nothing Universal Search,2026-10-22,10,78.5,912.9
+Nothing Universal Search,2026-10-23,11,96.9,973.0
+Nothing Universal Search,2026-10-24,9,89.6,1136.1
+Nothing Universal Search,2026-10-25,12,120.8,1461.2
+Nothing Universal Search,2026-10-26,11,85.1,792.2
+Nothing Universal Search,2026-10-27,12,115.8,1296.9
+Nothing Universal Search,2026-10-28,12,80.1,812.5
+Nothing Universal Search,2026-10-29,11,75.5,742.0
+Nothing Universal Search,2026-10-30,12,111.3,1250.4
+Nothing Universal Search,2026-10-31,7,101.0,1208.9
+Nothing Universal Search,2026-11-01,10,95.5,1243.6
+Nothing Universal Search,2026-11-02,11,87.2,1013.5
+Nothing Universal Search,2026-11-03,8,108.2,1419.4
+ironSource Aura,2026-07-27,1,10.2,14.5
+ironSource Aura,2026-07-28,6,47.8,92.6
+ironSource Aura,2026-07-29,5,48.9,72.9
+ironSource Aura,2026-07-30,4,31.0,46.4
+ironSource Aura,2026-07-31,3,32.0,39.5
+ironSource Aura,2026-08-01,5,35.6,60.1
+ironSource Aura,2026-08-02,5,50.1,76.4
+ironSource Aura,2026-08-03,2,34.3,41.0
+ironSource Aura,2026-08-04,4,38.2,53.4
+ironSource Aura,2026-08-05,1,9.6,12.9
+ironSource Aura,2026-08-06,3,37.3,49.3
+ironSource Aura,2026-08-07,2,48.7,57.3
+ironSource Aura,2026-08-08,3,23.1,27.1
+ironSource Aura,2026-08-09,5,31.5,51.3
+ironSource Aura,2026-08-10,4,60.2,65.9
+ironSource Aura,2026-08-11,5,49.6,73.7
+ironSource Aura,2026-08-12,6,41.4,75.4
+ironSource Aura,2026-08-13,5,48.4,65.1
+ironSource Aura,2026-08-14,5,45.7,58.7
+ironSource Aura,2026-08-15,5,93.5,76.5
+ironSource Aura,2026-08-16,5,58.5,83.3
+ironSource Aura,2026-08-17,5,62.8,71.1
+ironSource Aura,2026-08-18,3,45.1,65.9
+ironSource Aura,2026-08-19,4,51.7,60.1
+ironSource Aura,2026-08-20,6,70.4,85.6
+ironSource Aura,2026-08-21,4,39.7,50.9
+ironSource Aura,2026-08-22,3,32.5,37.2
+ironSource Aura,2026-08-23,4,59.6,65.0
+ironSource Aura,2026-08-24,2,24.7,36.5
+ironSource Aura,2026-08-25,6,47.6,71.3
+ironSource Aura,2026-08-26,4,91.5,59.2
+ironSource Aura,2026-08-27,4,49.6,64.9
+ironSource Aura,2026-08-28,4,59.6,73.2
+ironSource Aura,2026-08-29,5,51.8,60.0
+ironSource Aura,2026-08-30,3,40.2,56.8
+ironSource Aura,2026-08-31,5,51.0,79.4
+ironSource Aura,2026-09-01,5,45.2,63.4
+ironSource Aura,2026-09-02,5,49.5,68.5
+ironSource Aura,2026-09-03,4,42.7,55.7
+ironSource Aura,2026-09-04,7,45.7,74.1
+ironSource Aura,2026-09-05,4,38.7,46.5
+ironSource Aura,2026-09-06,4,56.6,72.6
+ironSource Aura,2026-09-07,4,37.4,46.7
+ironSource Aura,2026-09-08,5,59.9,52.6
+ironSource Aura,2026-09-09,4,41.8,52.2
+ironSource Aura,2026-09-10,5,41.9,53.7
+ironSource Aura,2026-09-11,4,51.0,62.3
+ironSource Aura,2026-09-12,5,34.0,58.7
+ironSource Aura,2026-09-13,5,57.4,96.0
+ironSource Aura,2026-09-14,4,52.7,66.1
+ironSource Aura,2026-09-15,5,20.9,36.3
+ironSource Aura,2026-09-16,6,42.0,58.5
+ironSource Aura,2026-09-17,4,32.9,52.3
+ironSource Aura,2026-09-18,7,45.5,49.1
+ironSource Aura,2026-09-19,3,23.1,35.6
+ironSource Aura,2026-09-20,5,48.7,71.9
+ironSource Aura,2026-09-21,2,18.3,30.7
+ironSource Aura,2026-09-22,2,32.5,50.2
+ironSource Aura,2026-09-23,3,16.0,28.4
+ironSource Aura,2026-09-24,4,29.4,45.6
+ironSource Aura,2026-09-25,7,32.3,52.1
+ironSource Aura,2026-09-26,4,50.5,56.2
+ironSource Aura,2026-09-27,4,58.0,82.5
+ironSource Aura,2026-09-28,3,40.4,44.4
+ironSource Aura,2026-09-29,3,25.7,36.0
+ironSource Aura,2026-09-30,3,49.6,53.6
+ironSource Aura,2026-10-01,4,17.5,29.7
+ironSource Aura,2026-10-02,5,44.6,70.1
+ironSource Aura,2026-10-03,5,34.0,46.5
+ironSource Aura,2026-10-04,4,21.6,39.4
+ironSource Aura,2026-10-05,4,28.7,45.6
+ironSource Aura,2026-10-06,4,37.0,40.5
+ironSource Aura,2026-10-07,3,26.8,42.6
+ironSource Aura,2026-10-08,4,39.9,51.6
+ironSource Aura,2026-10-09,6,43.1,61.8
+ironSource Aura,2026-10-10,2,29.4,31.9
+ironSource Aura,2026-10-11,6,68.9,80.2
+ironSource Aura,2026-10-12,4,37.1,42.6
+ironSource Aura,2026-10-13,6,60.4,80.0
+ironSource Aura,2026-10-14,4,41.9,55.3
+ironSource Aura,2026-10-15,7,63.7,87.6
+ironSource Aura,2026-10-16,4,45.3,62.5
+ironSource Aura,2026-10-17,4,28.2,41.5
+ironSource Aura,2026-10-18,4,17.7,26.5
+ironSource Aura,2026-10-19,4,23.5,33.9
+ironSource Aura,2026-10-20,5,124.8,92.4
+ironSource Aura,2026-10-21,4,33.4,53.3
+ironSource Aura,2026-10-22,5,38.6,60.4
+ironSource Aura,2026-10-23,6,53.1,63.4
+ironSource Aura,2026-10-24,4,74.0,73.1
+ironSource Aura,2026-10-25,5,41.0,66.0
+ironSource Aura,2026-10-26,2,15.3,21.7
+ironSource Aura,2026-10-27,4,28.8,43.0
+ironSource Aura,2026-10-28,3,36.3,40.1
+ironSource Aura,2026-10-29,3,17.5,26.9
+ironSource Aura,2026-10-30,3,20.7,27.3
+ironSource Aura,2026-10-31,3,23.8,32.4
+ironSource Aura,2026-11-01,6,74.3,87.2
+ironSource Aura,2026-11-02,5,61.3,74.6
+ironSource Aura,2026-11-03,2,28.9,22.2
+Nothing Gallery,2026-07-27,0,0.0,0.0
+Nothing Gallery,2026-07-28,0,0.0,0.0
+Nothing Gallery,2026-07-29,0,0.0,0.0
+Nothing Gallery,2026-07-30,0,0.0,0.0
+Nothing Gallery,2026-07-31,3,12.2,35.2
+Nothing Gallery,2026-08-01,6,34.2,102.0
+Nothing Gallery,2026-08-02,2,4.8,13.1
+Nothing Gallery,2026-08-03,0,0.0,0.0
+Nothing Gallery,2026-08-04,0,0.0,0.0
+Nothing Gallery,2026-08-05,0,0.0,0.0
+Nothing Gallery,2026-08-06,0,0.0,0.0
+Nothing Gallery,2026-08-07,3,14.9,44.4
+Nothing Gallery,2026-08-08,0,0.0,0.0
+Nothing Gallery,2026-08-09,0,0.0,0.0
+Nothing Gallery,2026-08-10,0,0.0,0.0
+Nothing Gallery,2026-08-11,3,12.7,34.4
+Nothing Gallery,2026-08-12,4,24.3,69.0
+Nothing Gallery,2026-08-13,0,0.0,0.0
+Nothing Gallery,2026-08-14,2,10.2,29.2
+Nothing Gallery,2026-08-15,6,22.2,60.6
+Nothing Gallery,2026-08-16,3,16.3,45.3
+Nothing Gallery,2026-08-17,0,0.0,0.0
+Nothing Gallery,2026-08-18,2,4.8,13.8
+Nothing Gallery,2026-08-19,0,0.0,0.0
+Nothing Gallery,2026-08-20,2,5.0,13.6
+Nothing Gallery,2026-08-21,1,2.3,6.6
+Nothing Gallery,2026-08-22,2,5.6,13.8
+Nothing Gallery,2026-08-23,0,0.0,0.0
+Nothing Gallery,2026-08-24,0,0.0,0.0
+Nothing Gallery,2026-08-25,0,0.0,0.0
+Nothing Gallery,2026-08-26,6,22.4,62.7
+Nothing Gallery,2026-08-27,0,0.0,0.0
+Nothing Gallery,2026-08-28,4,20.4,57.2
+Nothing Gallery,2026-08-29,2,4.9,13.5
+Nothing Gallery,2026-08-30,0,0.0,0.0
+Nothing Gallery,2026-08-31,2,7.5,20.5
+Nothing Gallery,2026-09-01,4,32.7,80.0
+Nothing Gallery,2026-09-02,4,23.5,54.3
+Nothing Gallery,2026-09-03,1,2.5,6.5
+Nothing Gallery,2026-09-04,1,2.8,7.1
+Nothing Gallery,2026-09-05,0,0.0,0.0
+Nothing Gallery,2026-09-06,0,0.0,0.0
+Nothing Gallery,2026-09-07,0,0.0,0.0
+Nothing Gallery,2026-09-08,1,8.3,12.7
+Nothing Gallery,2026-09-09,0,0.0,0.0
+Nothing Gallery,2026-09-10,0,0.0,0.0
+Nothing Gallery,2026-09-11,0,0.0,0.0
+Nothing Gallery,2026-09-12,2,5.4,14.5
+Nothing Gallery,2026-09-13,4,9.9,27.5
+Nothing Gallery,2026-09-14,1,2.6,6.9
+Nothing Gallery,2026-09-15,1,2.7,7.1
+Nothing Gallery,2026-09-16,0,0.0,0.0
+Nothing Gallery,2026-09-17,0,0.0,0.0
+Nothing Gallery,2026-09-18,0,0.0,0.0
+Nothing Gallery,2026-09-19,0,0.0,0.0
+Nothing Gallery,2026-09-20,3,10.5,27.8
+Nothing Gallery,2026-09-21,5,17.9,50.2
+Nothing Gallery,2026-09-22,2,7.3,20.3
+Nothing Gallery,2026-09-23,2,19.7,48.2
+Nothing Gallery,2026-09-24,5,20.0,59.2
+Nothing Gallery,2026-09-25,5,19.5,56.7
+Nothing Gallery,2026-09-26,2,8.3,21.9
+Nothing Gallery,2026-09-27,7,35.3,68.6
+Nothing Gallery,2026-09-28,0,0.0,0.0
+Nothing Gallery,2026-09-29,0,0.0,0.0
+Nothing Gallery,2026-09-30,0,0.0,0.0
+Nothing Gallery,2026-10-01,0,0.0,0.0
+Nothing Gallery,2026-10-02,0,0.0,0.0
+Nothing Gallery,2026-10-03,2,10.6,20.7
+Nothing Gallery,2026-10-04,2,15.2,44.9
+Nothing Gallery,2026-10-05,3,14.5,41.1
+Nothing Gallery,2026-10-06,2,9.6,29.3
+Nothing Gallery,2026-10-07,3,11.0,41.9
+Nothing Gallery,2026-10-08,2,4.9,14.3
+Nothing Gallery,2026-10-09,0,0.0,0.0
+Nothing Gallery,2026-10-10,0,0.0,0.0
+Nothing Gallery,2026-10-11,0,0.0,0.0
+Nothing Gallery,2026-10-12,0,0.0,0.0
+Nothing Gallery,2026-10-13,0,0.0,0.0
+Nothing Gallery,2026-10-14,0,0.0,0.0
+Nothing Gallery,2026-10-15,1,2.7,7.6
+Nothing Gallery,2026-10-16,0,0.0,0.0
+Nothing Gallery,2026-10-17,0,0.0,0.0
+Nothing Gallery,2026-10-18,0,0.0,0.0
+Nothing Gallery,2026-10-19,0,0.0,0.0
+Nothing Gallery,2026-10-20,3,14.9,30.7
+Nothing Gallery,2026-10-21,0,0.0,0.0
+Nothing Gallery,2026-10-22,0,0.0,0.0
+Nothing Gallery,2026-10-23,3,12.0,31.3
+Nothing Gallery,2026-10-24,2,7.5,16.6
+Nothing Gallery,2026-10-25,3,11.9,29.0
+Nothing Gallery,2026-10-26,3,14.6,35.4
+Nothing Gallery,2026-10-27,4,12.3,28.8
+Nothing Gallery,2026-10-28,0,0.0,0.0
+Nothing Gallery,2026-10-29,1,5.1,10.6
+Nothing Gallery,2026-10-30,2,13.0,19.0
+Nothing Gallery,2026-10-31,0,0.0,0.0
+Nothing Gallery,2026-11-01,2,7.9,16.8
+Nothing Gallery,2026-11-02,2,4.9,11.3
+Nothing Gallery,2026-11-03,0,0.0,0.0
+Nothing App Service,2026-07-27,0,0.0,0.0
+Nothing App Service,2026-07-28,0,0.0,0.0
+Nothing App Service,2026-07-29,1,6.8,6.8
+Nothing App Service,2026-07-30,0,0.0,0.0
+Nothing App Service,2026-07-31,0,0.0,0.0
+Nothing App Service,2026-08-01,0,0.0,0.0
+Nothing App Service,2026-08-02,1,7.7,11.8
+Nothing App Service,2026-08-03,1,10.6,9.9
+Nothing App Service,2026-08-04,1,5.3,5.1
+Nothing App Service,2026-08-05,0,0.0,0.0
+Nothing App Service,2026-08-06,1,4.7,28.7
+Nothing App Service,2026-08-07,1,52.3,34.1
+Nothing App Service,2026-08-08,1,14.3,14.7
+Nothing App Service,2026-08-09,0,0.0,0.0
+Nothing App Service,2026-08-10,2,9.5,13.4
+Nothing App Service,2026-08-11,1,13.5,13.5
+Nothing App Service,2026-08-12,0,0.0,0.0
+Nothing App Service,2026-08-13,1,7.1,6.8
+Nothing App Service,2026-08-14,2,7.8,7.3
+Nothing App Service,2026-08-15,2,21.1,17.1
+Nothing App Service,2026-08-16,2,15.6,15.7
+Nothing App Service,2026-08-17,3,25.8,25.1
+Nothing App Service,2026-08-18,1,9.7,14.1
+Nothing App Service,2026-08-19,2,17.6,17.4
+Nothing App Service,2026-08-20,3,23.2,24.6
+Nothing App Service,2026-08-21,1,7.0,6.7
+Nothing App Service,2026-08-22,1,6.1,9.1
+Nothing App Service,2026-08-23,2,24.8,25.6
+Nothing App Service,2026-08-24,0,0.0,0.0
+Nothing App Service,2026-08-25,1,9.5,13.3
+Nothing App Service,2026-08-26,1,6.9,6.8
+Nothing App Service,2026-08-27,1,6.5,5.0
+Nothing App Service,2026-08-28,0,0.0,0.0
+Nothing App Service,2026-08-29,2,19.0,18.7
+Nothing App Service,2026-08-30,1,4.6,5.5
+Nothing App Service,2026-08-31,1,4.4,4.2
+Nothing App Service,2026-09-01,1,1.3,0.9
+Nothing App Service,2026-09-02,1,4.2,8.1
+Nothing App Service,2026-09-03,1,5.6,5.4
+Nothing App Service,2026-09-04,1,11.6,13.3
+Nothing App Service,2026-09-05,1,5.7,5.4
+Nothing App Service,2026-09-06,2,13.3,17.2
+Nothing App Service,2026-09-07,1,5.7,5.3
+Nothing App Service,2026-09-08,1,5.7,5.3
+Nothing App Service,2026-09-09,1,8.5,12.1
+Nothing App Service,2026-09-10,1,11.1,12.1
+Nothing App Service,2026-09-11,2,11.5,10.8
+Nothing App Service,2026-09-12,0,0.0,0.0
+Nothing App Service,2026-09-13,1,6.4,29.4
+Nothing App Service,2026-09-14,1,14.0,13.4
+Nothing App Service,2026-09-15,0,0.0,0.0
+Nothing App Service,2026-09-16,1,5.8,5.4
+Nothing App Service,2026-09-17,1,8.5,12.5
+Nothing App Service,2026-09-18,2,11.5,12.2
+Nothing App Service,2026-09-19,0,0.0,0.0
+Nothing App Service,2026-09-20,1,5.6,5.4
+Nothing App Service,2026-09-21,0,0.0,0.0
+Nothing App Service,2026-09-22,0,0.0,0.0
+Nothing App Service,2026-09-23,0,0.0,0.0
+Nothing App Service,2026-09-24,0,0.0,0.0
+Nothing App Service,2026-09-25,0,0.0,0.0
+Nothing App Service,2026-09-26,2,16.0,20.8
+Nothing App Service,2026-09-27,1,4.5,5.5
+Nothing App Service,2026-09-28,2,13.0,20.6
+Nothing App Service,2026-09-29,0,0.0,0.0
+Nothing App Service,2026-09-30,2,11.7,12.3
+Nothing App Service,2026-10-01,0,0.0,0.0
+Nothing App Service,2026-10-02,1,6.1,10.8
+Nothing App Service,2026-10-03,1,9.6,14.5
+Nothing App Service,2026-10-04,1,6.0,9.1
+Nothing App Service,2026-10-05,0,0.0,0.0
+Nothing App Service,2026-10-06,1,6.9,6.8
+Nothing App Service,2026-10-07,0,0.0,0.0
+Nothing App Service,2026-10-08,1,6.8,34.7
+Nothing App Service,2026-10-09,1,5.7,6.8
+Nothing App Service,2026-10-10,1,5.5,30.8
+Nothing App Service,2026-10-11,2,19.7,29.2
+Nothing App Service,2026-10-12,1,7.0,6.8
+Nothing App Service,2026-10-13,2,22.2,23.4
+Nothing App Service,2026-10-14,1,4.4,5.4
+Nothing App Service,2026-10-15,2,16.8,21.0
+Nothing App Service,2026-10-16,1,5.6,5.4
+Nothing App Service,2026-10-17,0,0.0,0.0
+Nothing App Service,2026-10-18,0,0.0,0.0
+Nothing App Service,2026-10-19,0,0.0,0.0
+Nothing App Service,2026-10-20,2,15.4,18.3
+Nothing App Service,2026-10-21,0,0.0,0.0
+Nothing App Service,2026-10-22,1,6.9,6.8
+Nothing App Service,2026-10-23,2,12.8,13.6
+Nothing App Service,2026-10-24,2,17.8,44.1
+Nothing App Service,2026-10-25,0,0.0,0.0
+Nothing App Service,2026-10-26,0,0.0,0.0
+Nothing App Service,2026-10-27,0,0.0,0.0
+Nothing App Service,2026-10-28,1,9.7,12.2
+Nothing App Service,2026-10-29,0,0.0,0.0
+Nothing App Service,2026-10-30,0,0.0,0.0
+Nothing App Service,2026-10-31,1,5.6,5.4
+Nothing App Service,2026-11-01,3,17.1,19.5
+Nothing App Service,2026-11-02,1,4.4,5.4
+Nothing App Service,2026-11-03,1,17.5,17.3
+Nothing Launcher,2026-07-27,0,0.0,0.0
+Nothing Launcher,2026-07-28,0,0.0,0.0
+Nothing Launcher,2026-07-29,0,0.0,0.0
+Nothing Launcher,2026-07-30,0,0.0,0.0
+Nothing Launcher,2026-07-31,0,0.0,0.0
+Nothing Launcher,2026-08-01,0,0.0,0.0
+Nothing Launcher,2026-08-02,0,0.0,0.0
+Nothing Launcher,2026-08-03,0,0.0,0.0
+Nothing Launcher,2026-08-04,0,0.0,0.0
+Nothing Launcher,2026-08-05,1,2.2,6.6
+Nothing Launcher,2026-08-06,0,0.0,0.0
+Nothing Launcher,2026-08-07,0,0.0,0.0
+Nothing Launcher,2026-08-08,0,0.0,0.0
+Nothing Launcher,2026-08-09,0,0.0,0.0
+Nothing Launcher,2026-08-10,0,0.0,0.0
+Nothing Launcher,2026-08-11,0,0.0,0.0
+Nothing Launcher,2026-08-12,0,0.0,0.0
+Nothing Launcher,2026-08-13,0,0.0,0.0
+Nothing Launcher,2026-08-14,0,0.0,0.0
+Nothing Launcher,2026-08-15,0,0.0,0.0
+Nothing Launcher,2026-08-16,0,0.0,0.0
+Nothing Launcher,2026-08-17,0,0.0,0.0
+Nothing Launcher,2026-08-18,1,2.0,6.3
+Nothing Launcher,2026-08-19,1,5.2,14.5
+Nothing Launcher,2026-08-20,0,0.0,0.0
+Nothing Launcher,2026-08-21,0,0.0,0.0
+Nothing Launcher,2026-08-22,0,0.0,0.0
+Nothing Launcher,2026-08-23,0,0.0,0.0
+Nothing Launcher,2026-08-24,1,1.9,6.2
+Nothing Launcher,2026-08-25,3,8.7,26.1
+Nothing Launcher,2026-08-26,0,0.0,0.0
+Nothing Launcher,2026-08-27,0,0.0,0.0
+Nothing Launcher,2026-08-28,0,0.0,0.0
+Nothing Launcher,2026-08-29,0,0.0,0.0
+Nothing Launcher,2026-08-30,0,0.0,0.0
+Nothing Launcher,2026-08-31,0,0.0,0.0
+Nothing Launcher,2026-09-01,0,0.0,0.0
+Nothing Launcher,2026-09-02,0,0.0,0.0
+Nothing Launcher,2026-09-03,0,0.0,0.0
+Nothing Launcher,2026-09-04,1,2.2,6.6
+Nothing Launcher,2026-09-05,0,0.0,0.0
+Nothing Launcher,2026-09-06,0,0.0,0.0
+Nothing Launcher,2026-09-07,0,0.0,0.0
+Nothing Launcher,2026-09-08,0,0.0,0.0
+Nothing Launcher,2026-09-09,1,2.2,7.0
+Nothing Launcher,2026-09-10,1,1.9,6.0
+Nothing Launcher,2026-09-11,0,0.0,0.0
+Nothing Launcher,2026-09-12,0,0.0,0.0
+Nothing Launcher,2026-09-13,0,0.0,0.0
+Nothing Launcher,2026-09-14,0,0.0,0.0
+Nothing Launcher,2026-09-15,0,0.0,0.0
+Nothing Launcher,2026-09-16,2,4.7,12.9
+Nothing Launcher,2026-09-17,1,2.0,6.3
+Nothing Launcher,2026-09-18,0,0.0,0.0
+Nothing Launcher,2026-09-19,1,2.2,6.6
+Nothing Launcher,2026-09-20,0,0.0,0.0
+Nothing Launcher,2026-09-21,0,0.0,0.0
+Nothing Launcher,2026-09-22,0,0.0,0.0
+Nothing Launcher,2026-09-23,0,0.0,0.0
+Nothing Launcher,2026-09-24,0,0.0,0.0
+Nothing Launcher,2026-09-25,0,0.0,0.0
+Nothing Launcher,2026-09-26,0,0.0,0.0
+Nothing Launcher,2026-09-27,0,0.0,0.0
+Nothing Launcher,2026-09-28,0,0.0,0.0
+Nothing Launcher,2026-09-29,0,0.0,0.0
+Nothing Launcher,2026-09-30,0,0.0,0.0
+Nothing Launcher,2026-10-01,0,0.0,0.0
+Nothing Launcher,2026-10-02,0,0.0,0.0
+Nothing Launcher,2026-10-03,0,0.0,0.0
+Nothing Launcher,2026-10-04,1,2.1,6.6
+Nothing Launcher,2026-10-05,0,0.0,0.0
+Nothing Launcher,2026-10-06,0,0.0,0.0
+Nothing Launcher,2026-10-07,0,0.0,0.0
+Nothing Launcher,2026-10-08,0,0.0,0.0
+Nothing Launcher,2026-10-09,0,0.0,0.0
+Nothing Launcher,2026-10-10,0,0.0,0.0
+Nothing Launcher,2026-10-11,0,0.0,0.0
+Nothing Launcher,2026-10-12,1,2.2,6.4
+Nothing Launcher,2026-10-13,0,0.0,0.0
+Nothing Launcher,2026-10-14,0,0.0,0.0
+Nothing Launcher,2026-10-15,0,0.0,0.0
+Nothing Launcher,2026-10-16,0,0.0,0.0
+Nothing Launcher,2026-10-17,1,1.9,6.2
+Nothing Launcher,2026-10-18,1,2.0,6.3
+Nothing Launcher,2026-10-19,0,0.0,0.0
+Nothing Launcher,2026-10-20,0,0.0,0.0
+Nothing Launcher,2026-10-21,0,0.0,0.0
+Nothing Launcher,2026-10-22,0,0.0,0.0
+Nothing Launcher,2026-10-23,0,0.0,0.0
+Nothing Launcher,2026-10-24,0,0.0,0.0
+Nothing Launcher,2026-10-25,0,0.0,0.0
+Nothing Launcher,2026-10-26,0,0.0,0.0
+Nothing Launcher,2026-10-27,0,0.0,0.0
+Nothing Launcher,2026-10-28,0,0.0,0.0
+Nothing Launcher,2026-10-29,0,0.0,0.0
+Nothing Launcher,2026-10-30,0,0.0,0.0
+Nothing Launcher,2026-10-31,0,0.0,0.0
+Nothing Launcher,2026-11-01,0,0.0,0.0
+Nothing Launcher,2026-11-02,0,0.0,0.0
+Nothing Launcher,2026-11-03,0,0.0,0.0
+Nothing User Center,2026-07-27,0,0.0,0.0
+Nothing User Center,2026-07-28,0,0.0,0.0
+Nothing User Center,2026-07-29,0,0.0,0.0
+Nothing User Center,2026-07-30,0,0.0,0.0
+Nothing User Center,2026-07-31,0,0.0,0.0
+Nothing User Center,2026-08-01,0,0.0,0.0
+Nothing User Center,2026-08-02,0,0.0,0.0
+Nothing User Center,2026-08-03,0,0.0,0.0
+Nothing User Center,2026-08-04,0,0.0,0.0
+Nothing User Center,2026-08-05,0,0.0,0.0
+Nothing User Center,2026-08-06,0,0.0,0.0
+Nothing User Center,2026-08-07,0,0.0,0.0
+Nothing User Center,2026-08-08,0,0.0,0.0
+Nothing User Center,2026-08-09,0,0.0,0.0
+Nothing User Center,2026-08-10,0,0.0,0.0
+Nothing User Center,2026-08-11,0,0.0,0.0
+Nothing User Center,2026-08-12,0,0.0,0.0
+Nothing User Center,2026-08-13,0,0.0,0.0
+Nothing User Center,2026-08-14,0,0.0,0.0
+Nothing User Center,2026-08-15,0,0.0,0.0
+Nothing User Center,2026-08-16,0,0.0,0.0
+Nothing User Center,2026-08-17,0,0.0,0.0
+Nothing User Center,2026-08-18,0,0.0,0.0
+Nothing User Center,2026-08-19,0,0.0,0.0
+Nothing User Center,2026-08-20,0,0.0,0.0
+Nothing User Center,2026-08-21,0,0.0,0.0
+Nothing User Center,2026-08-22,0,0.0,0.0
+Nothing User Center,2026-08-23,0,0.0,0.0
+Nothing User Center,2026-08-24,0,0.0,0.0
+Nothing User Center,2026-08-25,0,0.0,0.0
+Nothing User Center,2026-08-26,0,0.0,0.0
+Nothing User Center,2026-08-27,0,0.0,0.0
+Nothing User Center,2026-08-28,0,0.0,0.0
+Nothing User Center,2026-08-29,0,0.0,0.0
+Nothing User Center,2026-08-30,0,0.0,0.0
+Nothing User Center,2026-08-31,0,0.0,0.0
+Nothing User Center,2026-09-01,0,0.0,0.0
+Nothing User Center,2026-09-02,0,0.0,0.0
+Nothing User Center,2026-09-03,0,0.0,0.0
+Nothing User Center,2026-09-04,0,0.0,0.0
+Nothing User Center,2026-09-05,0,0.0,0.0
+Nothing User Center,2026-09-06,0,0.0,0.0
+Nothing User Center,2026-09-07,0,0.0,0.0
+Nothing User Center,2026-09-08,0,0.0,0.0
+Nothing User Center,2026-09-09,0,0.0,0.0
+Nothing User Center,2026-09-10,0,0.0,0.0
+Nothing User Center,2026-09-11,0,0.0,0.0
+Nothing User Center,2026-09-12,0,0.0,0.0
+Nothing User Center,2026-09-13,0,0.0,0.0
+Nothing User Center,2026-09-14,0,0.0,0.0
+Nothing User Center,2026-09-15,0,0.0,0.0
+Nothing User Center,2026-09-16,0,0.0,0.0
+Nothing User Center,2026-09-17,0,0.0,0.0
+Nothing User Center,2026-09-18,0,0.0,0.0
+Nothing User Center,2026-09-19,0,0.0,0.0
+Nothing User Center,2026-09-20,0,0.0,0.0
+Nothing User Center,2026-09-21,0,0.0,0.0
+Nothing User Center,2026-09-22,0,0.0,0.0
+Nothing User Center,2026-09-23,0,0.0,0.0
+Nothing User Center,2026-09-24,0,0.0,0.0
+Nothing User Center,2026-09-25,0,0.0,0.0
+Nothing User Center,2026-09-26,0,0.0,0.0
+Nothing User Center,2026-09-27,0,0.0,0.0
+Nothing User Center,2026-09-28,0,0.0,0.0
+Nothing User Center,2026-09-29,0,0.0,0.0
+Nothing User Center,2026-09-30,0,0.0,0.0
+Nothing User Center,2026-10-01,0,0.0,0.0
+Nothing User Center,2026-10-02,0,0.0,0.0
+Nothing User Center,2026-10-03,0,0.0,0.0
+Nothing User Center,2026-10-04,0,0.0,0.0
+Nothing User Center,2026-10-05,0,0.0,0.0
+Nothing User Center,2026-10-06,0,0.0,0.0
+Nothing User Center,2026-10-07,0,0.0,0.0
+Nothing User Center,2026-10-08,0,0.0,0.0
+Nothing User Center,2026-10-09,0,0.0,0.0
+Nothing User Center,2026-10-10,0,0.0,0.0
+Nothing User Center,2026-10-11,0,0.0,0.0
+Nothing User Center,2026-10-12,0,0.0,0.0
+Nothing User Center,2026-10-13,0,0.0,0.0
+Nothing User Center,2026-10-14,0,0.0,0.0
+Nothing User Center,2026-10-15,0,0.0,0.0
+Nothing User Center,2026-10-16,0,0.0,0.0
+Nothing User Center,2026-10-17,0,0.0,0.0
+Nothing User Center,2026-10-18,0,0.0,0.0
+Nothing User Center,2026-10-19,0,0.0,0.0
+Nothing User Center,2026-10-20,0,0.0,0.0
+Nothing User Center,2026-10-21,0,0.0,0.0
+Nothing User Center,2026-10-22,0,0.0,0.0
+Nothing User Center,2026-10-23,0,0.0,0.0
+Nothing User Center,2026-10-24,0,0.0,0.0
+Nothing User Center,2026-10-25,0,0.0,0.0
+Nothing User Center,2026-10-26,0,0.0,0.0
+Nothing User Center,2026-10-27,1,6.0,19.4
+Nothing User Center,2026-10-28,1,1.9,6.7
+Nothing User Center,2026-10-29,0,0.0,0.0
+Nothing User Center,2026-10-30,2,5.2,20.2
+Nothing User Center,2026-10-31,2,3.3,13.3
+Nothing User Center,2026-11-01,3,4.7,19.5
+Nothing User Center,2026-11-02,2,3.5,13.4
+Nothing User Center,2026-11-03,3,7.8,32.8

@@ -239,6 +239,7 @@ const STYLES = `
   .post-body a:hover { color: #cc0000; }
   .post-body strong { color: #000; }
   .post-body em { color: #444; }
+  .post-body img { display: block; max-width: 100%; height: auto; margin: 6px 0 4px; border: 1px solid #bbb; }
   .post-body blockquote {
     border-left: 4px solid #999;
     margin: 12px 0 12px 8px;
