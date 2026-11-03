@@ -6,7 +6,7 @@ description: "I connected my Nothing Phone to ADB and looked at what runs behind
 
 I have a Nothing Phone (2a) Plus. One of the reasons I liked it was how clean Nothing OS felt. Almost no bloatware.
 
-So I got curious about what runs in the background. I connected it to my laptop over ADB, no root, and started digging with Claude.
+So I got curious about what runs in the background. I connected it to my laptop over ADB, no root, and started digging.
 
 I found more than I expected.
 
